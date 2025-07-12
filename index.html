@@ -1,1082 +1,537 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shashangka Upadhayaya - Portfolio</title>
-
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/favicon2.png" type="image/x-icon">
-
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
-
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shashangka Upadhyaya - Cloud & Backend Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .typed-cursor {
+            color: #38bdf8; /* Light blue color for cursor */
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Splash Screen Styles */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #111827;
+            z-index: 100;
+            display: flex;
+            flex-direction: column; /* Arrange items vertically */
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.75s ease-out;
+        }
+        #splash-image {
+            width: 200px; /* Adjust size as needed */
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #38bdf8;
+        }
+        #splash-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #f9fafb;
+            margin-top: 2rem;
+            text-align: center;
+            animation: fadeInText 2s ease-in-out;
+        }
+        @keyframes fadeInText {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#111827',
+                        'dark-card': '#1f2937',
+                        'dark-text': '#d1d5db',
+                        'dark-heading': '#f9fafb',
+                        'accent': '#38bdf8',
+                        'accent-hover': '#0ea5e9',
+                    }
+                }
+            }
+        }
+    </script>
+    <noscript>
+        <style>
+            #splash-screen { display: none !important; }
+            #main-content { display: block !important; }
+        </style>
+    </noscript>
+    <style>
+        @keyframes splash-fadeout {
+            to { opacity: 0; pointer-events: none; display: none; }
+        }
+        .splash-fadeout {
+            animation: splash-fadeout 0.75s ease-out 3s forwards;
+        }
+    </style>
+    <script>
+        // Add a CSS fallback in case JS fails
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('splash-screen').classList.add('splash-fadeout');
+        });
+    </script>
 </head>
+<body class="bg-white dark:bg-dark-bg text-gray-700 dark:text-dark-text transition-colors duration-300">
 
-<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <img id="splash-image" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Man coding on a computer GIF">
+        <h1 id="splash-text">Welcome to Shash World!</h1>
+    </div>
 
-  <!--
-    - #MAIN
-  -->
-
-  <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/profile20.png" alt="Shashank" class="profile_img">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Shashangka">Shashangka <br/> Upadhyaya</h1>
-
-          <p class="title typewriter-effect" id="typewriter"></p>
-
-        </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://github.com/shashangka-upadhyaya" class="social-link" target="_blank">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/shashup/" class="social-link" target="_blank">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-          <!--div class="info-content"><p class="title"><a href="path/to/resume.pdf" download="resume.pdf" style="text-decoration: none; color:antiquewhite;"> Resume <i class="fas fa-download"></i></a></p></div--> 
-        </ul>
-        
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
+    <div id="main-content" class="hidden">
+        <!-- Header -->
+        <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-dark-bg/80 backdrop-blur-sm shadow-md">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#" class="text-xl font-bold text-gray-900 dark:text-dark-heading">Shashangka Upadhyaya</a>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="hover:text-accent dark:hover:text-accent">About</a>
+                    <a href="#projects" class="hover:text-accent dark:hover:text-accent">Projects</a>
+                    <a href="#experience" class="hover:text-accent dark:hover:text-accent">Experience</a>
+                    <a href="#skills" class="hover:text-accent dark:hover:text-accent">Skills</a>
+                    <a href="#contact" class="hover:text-accent dark:hover:text-accent">Contact</a>
+                </nav>
+                <div class="flex items-center">
+                    <button id="theme-toggle" class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-card">
+                        <i data-lucide="sun" class="block dark:hidden"></i>
+                        <i data-lucide="moon" class="hidden dark:block"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="md:hidden ml-4 p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-card">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
             </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:shashangkaupa@gmail.com" class="contact-link">shashangka.upa@gmail.com</a>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <a href="#about" class="block py-2 px-6 text-sm hover:bg-gray-200 dark:hover:bg-dark-card">About</a>
+                <a href="#projects" class="block py-2 px-6 text-sm hover:bg-gray-200 dark:hover:bg-dark-card">Projects</a>
+                <a href="#experience" class="block py-2 px-6 text-sm hover:bg-gray-200 dark:hover:bg-dark-card">Experience</a>
+                <a href="#skills" class="block py-2 px-6 text-sm hover:bg-gray-200 dark:hover:bg-dark-card">Skills</a>
+                <a href="#contact" class="block py-2 px-6 text-sm hover:bg-gray-200 dark:hover:bg-dark-card">Contact</a>
             </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+12133522795" class="contact-link">+1 (917) 349-8827</a>
-            </div>
-
-          </li>
-
-          <!--li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">June 23, 1982</time>
-            </div>
-
-          </li-->
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address> Castro Valley, California</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Projects</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
         </header>
 
-        <section class="about-text">
-          <p>
-            Hello! I’m Shashangka Upadhyaya, a passionate 27-year-old Software Engineer based in the United States. I recently graduated on May 9, 2025, with a Master’s in Computer Science from the University of Central Missouri. I’m certified as an AWS Solutions Architect – Associate and Azure Developer – Associate. My core strengths lie in Cloud DevOps and Full Stack Java Development, and I’m actively seeking full-time roles where I can drive innovation and security in modern web and cloud-based systems. Let’s connect and build something extraordinary!
-          </p>
-
-          <p>
-          
-
-
-
-I have 3 years of Professional Experience in the Software Development In Kathmandu, I gained valuable experience working as a Backend Developer in Core Banking System  and also worked as an Oracle Database Administrator. During this time, I contributed to high-impact projects for Class A banks, including complex data migrations and upgrades of the Finacle Core Banking System. These roles allowed me to tackle challenging technical problems while delivering mission-critical solutions. 
-
-          </p>
-        </section>
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+        <main class="pt-24">
+            <!-- Hero Section -->
+            <section id="home" class="container mx-auto px-6 py-20 md:py-32 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-dark-heading mb-4">
+                    Cloud & Backend Engineer | <span id="typed-headline"></span>
+                </h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-gray-600 dark:text-dark-text">
+                    Building scalable, AI-powered software to transform how people connect.
                 </p>
-              </div>
+                <div class="flex justify-center items-center space-x-4">
+                    <a href="#projects" class="bg-accent hover:bg-accent-hover text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">See Projects</a>
+                    <a href="https://placehold.co/800x1100/png?text=Resume.pdf" target="_blank" class="bg-gray-200 dark:bg-dark-card hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">View Résumé</a>
+                    <a href="#contact" class="bg-gray-200 dark:bg-dark-card hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">Connect with Me</a>
+                </div>
+            </section>
 
+            <!-- About Me Section -->
+            <section id="about" class="py-20 bg-gray-50 dark:bg-dark-card section-fade-in">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-dark-heading">About Me</h2>
+                    <div class="flex flex-col md:flex-row items-center gap-12">
+                        <div class="md:w-1/3 text-center">
+                            <img src="assets/images/ram.jpg" alt="Shashangka Upadhyaya" class="mx-auto mb-6 border-4 border-accent bg-white p-2 max-w-xs w-full" style="background-color:#fff; padding:0.5rem;">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-dark-heading">Shashangka Upadhyaya</h3>
+                            <p class="text-gray-600 dark:text-dark-text">Bay Area, CA</p>
+                            <div class="flex justify-center space-x-4 mt-4">
+                                <a href="#" class="text-gray-500 hover:text-accent"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                                <a href="#" class="text-gray-500 hover:text-accent"><i data-lucide="github" class="w-6 h-6"></i></a>
+                                <a href="mailto:shashangka.upa@gmail.com" class="text-gray-500 hover:text-accent"><i data-lucide="mail" class="w-6 h-6"></i></a>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3">
+                            <p class="text-lg mb-6 leading-relaxed">
+                                Based in the Bay Area, I am a Master's student in Computer Science at the University of California, Merced, with a deep passion for building scalable, AI-powered software. As the founder of BubbleBook.AI, an innovative real-time networking platform, I have hands-on experience in the entire product lifecycle, from conception to deployment. My expertise is backed by industry-recognized certifications from AWS, Azure, and Google's Generative AI program.
+                            </p>
+                            <a href="https://placehold.co/800x1100/png?text=Resume.pdf" target="_blank" class="inline-block bg-accent hover:bg-accent-hover text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">Download Résumé</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills & Certifications Section -->
+            <section id="skills" class="py-20 section-fade-in">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-dark-heading">Skills & Certifications</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                        <!-- Skills -->
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-6 text-center md:text-left text-gray-800 dark:text-gray-100">Technical Skills</h3>
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="font-semibold mb-2 text-accent">Cloud</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">AWS</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Azure</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Terraform</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Lambda</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">EC2</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">RDS</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">S3</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2 text-accent">Languages</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">JavaScript</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Bash</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">SQL</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2 text-accent">DevOps</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Docker</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">GitHub Actions</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Jenkins</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Helm</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2 text-accent">Tools</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Grafana</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Prometheus</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">ELK Stack</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">SonarQube</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Certifications -->
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-6 text-center md:text-left text-gray-800 dark:text-gray-100">Certifications</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center p-4 bg-gray-100 dark:bg-dark-card rounded-lg justify-between relative">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" class="w-16 h-16 mr-4"><rect width="64" height="64" fill="#FF9900" rx="8"/><text x="32" y="40" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">AWS</text></svg>
+                                        <div>
+                                            <h4 class="font-bold text-gray-900 dark:text-dark-heading">AWS Certified Solutions Architect</h4>
+                                            <p class="text-sm text-gray-600 dark:text-dark-text">Amazon Web Services</p>
+                                        </div>
+                                    </div>
+                                    <a href="https://www.linkedin.com/in/shashup/details/certifications/" target="_blank" style="z-index:50; pointer-events:auto;" class="flex items-center bg-accent hover:bg-accent-hover text-white font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-105 ml-4">Credential ID</a>
+                                </div>
+                                <div class="flex items-center p-4 bg-gray-100 dark:bg-dark-card rounded-lg justify-between relative">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" class="w-16 h-16 mr-4"><rect width="64" height="64" fill="#0078D4" rx="8"/><text x="32" y="40" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Microsoft</text></svg>
+                                        <div>
+                                            <h4 class="font-bold text-gray-900 dark:text-dark-heading">Microsoft Azure Developer Associate</h4>
+                                            <p class="text-sm text-gray-600 dark:text-dark-text">Microsoft</p>
+                                        </div>
+                                    </div>
+                                    <a href="https://www.linkedin.com/in/shashup/details/certifications/" target="_blank" style="z-index:50; pointer-events:auto;" class="flex items-center bg-accent hover:bg-accent-hover text-white font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-105 ml-4">Credential ID</a>
+                                </div>
+                                <div class="flex items-center p-4 bg-gray-100 dark:bg-dark-card rounded-lg justify-between relative">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" class="w-16 h-16 mr-4"><rect width="64" height="64" fill="#4285F4" rx="8"/><text x="32" y="40" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Google</text></svg>
+                                        <div>
+                                            <h4 class="font-bold text-gray-900 dark:text-dark-heading">Generative AI Learning Path</h4>
+                                            <p class="text-sm text-gray-600 dark:text-dark-text">Google Cloud</p>
+                                        </div>
+                                    </div>
+                                    <a href="https://www.linkedin.com/in/shashup/details/certifications/" target="_blank" style="z-index:50; pointer-events:auto;" class="flex items-center bg-accent hover:bg-accent-hover text-white font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-105 ml-4">Credential ID</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="py-20 bg-gray-50 dark:bg-dark-card section-fade-in">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-dark-heading">Experience</h2>
+                    <div class="relative max-w-2xl mx-auto">
+                        <div class="absolute left-1/2 w-0.5 h-full bg-gray-300 dark:bg-gray-600 transform -translate-x-1/2"></div>
+                        <!-- Experience Item 1 -->
+                        <div class="relative mb-8">
+                            <div class="absolute w-4 h-4 bg-accent rounded-full left-1/2 top-1.5 -translate-x-1/2 border-4 border-white dark:border-dark-card"></div>
+                            <div class="ml-auto md:ml-0 md:w-5/12 md:pl-8 md:text-right">
+                                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-dark-heading">Cloud Solutions Engineer</h3>
+                                    <p class="text-sm text-gray-600 dark:text-dark-text mb-2">Infosys Partner | 2021 - 2023</p>
+                                    <ul class="list-disc list-inside text-left text-sm space-y-1">
+                                        <li>Led Finacle deployments on Kubernetes.</li>
+                                        <li>Managed CI/CD with Azure DevOps & Terraform.</li>
+                                        <li>Set up monitoring with Prometheus & Grafana.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Experience Item 2 -->
+                        <div class="relative mb-8">
+                            <div class="absolute w-4 h-4 bg-accent rounded-full left-1/2 top-1.5 -translate-x-1/2 border-4 border-white dark:border-dark-card"></div>
+                            <div class="md:w-5/12 md:mr-auto md:pr-8">
+                                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-dark-heading">Network Admin</h3>
+                                    <p class="text-sm text-gray-600 dark:text-dark-text mb-2">IMARK Digital | 2019 - 2021</p>
+                                    <ul class="list-disc list-inside text-sm space-y-1">
+                                        <li>Managed enterprise network infrastructure.</li>
+                                        <li>Oversaw cybersecurity operations.</li>
+                                        <li>Handled performance tuning & incident response.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="py-20 section-fade-in">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-dark-heading">Projects</h2>
+                    <div class="flex justify-center space-x-2 mb-12">
+                        <button class="project-filter-btn active" data-filter="all">All</button>
+                        <button class="project-filter-btn" data-filter="AI">AI</button>
+                        <button class="project-filter-btn" data-filter="Cloud">Cloud</button>
+                        <button class="project-filter-btn" data-filter="DevOps">DevOps</button>
+                        <button class="project-filter-btn" data-filter="SaaS">SaaS</button>
+                    </div>
+                    <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Project 1 -->
+                        <div class="project-card bg-white dark:bg-dark-card rounded-lg shadow-lg overflow-hidden" data-category="AI SaaS Cloud">
+                            <img src="https://placehold.co/600x400/1f2937/ffffff?text=BubbleBook.AI" alt="BubbleBook.AI" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-dark-heading">BubbleBook.AI</h3>
+                                <p class="text-sm mb-4">An AI-powered real-time networking platform to connect individuals based on shared interests and professional goals.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Flutter</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Next.js</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Python</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">AWS</span>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="text-gray-500 hover:text-accent"><i data-lucide="github"></i></a>
+                                    <a href="https://bubblebook.live/Demo.html" target="_blank" class="text-gray-500 hover:text-accent"><i data-lucide="external-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project 2 -->
+                        <div class="project-card bg-white dark:bg-dark-card rounded-lg shadow-lg overflow-hidden" data-category="Cloud DevOps">
+                            <img src="https://placehold.co/600x400/1f2937/ffffff?text=Finacle+Migration" alt="Finacle Core Banking Migrations" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-dark-heading">Finacle Core Banking Migrations</h3>
+                                <p class="text-sm mb-4">Migrated and deployed the Finacle core banking application on Kubernetes clusters, ensuring high availability and scale.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Kubernetes</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Azure</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">GraphQL</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Terraform</span>
+                                </div>
+                                 <div class="flex space-x-4">
+                                    <a href="#" class="text-gray-500 hover:text-accent"><i data-lucide="github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                         <!-- Add more projects as needed -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="py-20 bg-gray-50 dark:bg-dark-card section-fade-in">
+                <div class="container mx-auto px-6 text-center">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-dark-heading">Get In Touch</h2>
+                    <p class="max-w-2xl mx-auto mb-8 text-lg">
+                        I'm always open to discussing new opportunities and collaborations. Feel free to reach out!
+                    </p>
+                    <a href="mailto:shashangka.upa@gmail.com" class="inline-block bg-accent hover:bg-accent-hover text-white font-bold py-4 px-8 rounded-lg text-lg transition-transform transform hover:scale-105">
+                        Say Hello
+                    </a>
+                    <div class="flex justify-center space-x-6 mt-12">
+                        <a href="#" class="text-gray-500 hover:text-accent"><i data-lucide="github" class="w-8 h-8"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-accent"><i data-lucide="linkedin" class="w-8 h-8"></i></a>
+                        <a href="#home" class="text-gray-500 hover:text-accent"><i data-lucide="briefcase" class="w-8 h-8"></i></a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-100 dark:bg-gray-900 py-8">
+            <div class="container mx-auto px-6 text-center text-gray-600 dark:text-dark-text">
+                <p>Bay Area, CA | <a href="mailto:shashangka.upa@gmail.com" class="hover:text-accent">shashangka.upa@gmail.com</a> | <a href="http://www.shashangkaupadhyaya.com" class="hover:text-accent">www.shashangkaupadhyaya.com</a></p>
+                <p class="mt-2 text-sm">&copy; 2025 Shashangka Upadhyaya. All Rights Reserved.</p>
             </div>
-
-          </section>
-
-        </div>
-
-
-        <!--
-          - clients
-        -->
-
-        <section class="clients">
-
-          <h3 class="h3 clients-title">Clients</h3>
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/cas_total_solutions.png" alt="client logo" height="150" width="150">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/max_international.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/nabil.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/prabhu.png" alt="client logo">
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-        <section class="skill"></section>
-
-          <h3 class="h3 skills-title">Skills & Expertise</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-              <div class="title-wrapper" onclick="toggleDropdown('programming-languages')">
-                  <h5 class="h5">Programming Languages <i class="fas fa-chevron-down"></i></h5>
-                  <data value="80"></data>
-              </div>
-              <ul id="programming-languages" class="dropdown-content" style="display: none;">
-                  <li>TypeScript, JavaScript, Python, R, SQL, C, C++, Java </li>
-              </ul>
-              <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-          </li>
-          
-          <li class="skills-item">
-              <div class="title-wrapper" onclick="toggleDropdown('frameworks')">
-                  <h5 class="h5">Frameworks & Libraries <i class="fas fa-chevron-down"></i></h5>
-                  <data value="70"></data>
-              </div>
-              <ul id="frameworks" class="dropdown-content" style="display: none;">
-                  <li>JavaScript Frameworks: React, Next.js, Express.js, Node.js, Redux</li>
-                  <li>Python Libraries: Pandas, Matplotlib, NumPy</li>
-                  <li>Java Framework: Spring</li>
-              </ul>
-              <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-          </li>          
-
-            <li class="skills-item">
-
-              <div class="title-wrapper" onclick="toggleDropdown('tools')">
-                <h5 class="h5">Tools & Platforms  <i class="fas fa-chevron-down"></i></h5>
-                <data value="90"></data>
-              </div>
-
-              <ul id="tools" class="dropdown-content" style="display: none;">
-  <li>Code Editors / IDEs: Visual Studio Code, PyCharm, R Studio</li>
-  <li>Database Management: Oracle SQL Developer, SQL Server Management Studio</li>
-  <li>Virtualization and Servers: VMware, IBM WAS Server</li>
-  <li>Version Control: GitHub</li>
-  <li>Business Intelligence: Power BI, Excel</li>
-  <li>Others: Putty, Jupyter Notebook, Red Hat Enterprise Linux 8.5</li>
-</ul>
-
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper" onclick="toggleDropdown('database')">
-                <h5 class="h5">Database & Cloud Management  <i class="fas fa-chevron-down"></i></h5>
-                <data value="50"></data>
-              </div>
-
-             <ul id="database" class="dropdown-content" style="display: none;">
-  <li>Relational Databases: Oracle 12c, 11g, 19c, 21c, Microsoft SQL Server, MySQL, SQLite, PostgreSQL</li>
-  <li>NoSQL Database: MongoDB</li>
-  <li>Cloud Platforms: AWS EC2, AWS S3, AWS RDS, AWS Lambda, AWS Elastic Beanstalk</li>
-</ul>
-
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-    - #RESUME
--->
-
-<article class="resume" data-page="resume">
-
-  <header>
-    <h2 class="h2 article-title">Resume</h2>
-  </header>
-
-  <section class="timeline">
-
-    <div class="title-wrapper">
-      <div class="icon-box">
-        <ion-icon name="book-outline"></ion-icon>
-      </div>
-
-      <h3 class="h3">Education</h3>
+        </footer>
     </div>
 
-    <ol class="timeline-list">
-
-      <li class="timeline-item">
-
-        <h4 class="h4 timeline-item-title">University of Central Missouri</h4>
-
-        <span>2023 — Present</span>
-
-        <p class="timeline-text">
-          Master of Science in Computer Science, Expected May 2025<br>
-        <br>
-          Relevant Coursework: Programming Foundation, Statistical Foundation, Cloud Computing, Ethical Hacking, Advanced Computer Networking<br>
-          Current Coursework: Advanced Algorithms, Advanced Python Programming, Compiler Design, Operating Systems
-        </p>
-
-      </li>
-
-      <li class="timeline-item">
-
-        <h4 class="h4 timeline-item-title">Tribhuvan University, Kathmandu, Nepal</h4>
-
-        <span>2015 — 2019</span>
-
-        <p class="timeline-text">
-          Bachelor of Science in Computer Science, GPA: 3.9<br>
-          Minor: Information Technology
-        </p>
-
-      </li>
-
-    </ol>
-
-  </section>
-
-  <section class="timeline">
-
-    <div class="title-wrapper">
-      <div class="icon-box">
-        <ion-icon name="book-outline"></ion-icon>
-      </div>
-
-      <h3 class="h3">Experience</h3>
-    </div>
-
-    <ol class="timeline-list">
-
-      <li class="timeline-item">
-
-        <h4 class="h4 timeline-item-title">Backend Software Engineer – Core Banking System, CAS Solution (Infosys Partner)</h4>
-
-        <span>June 2022 — May 2023</span>
-
-        <p class="timeline-text">
-
-          Worked with Multiple Bank Clients
-          Implemented a core banking solution for Nabil Bank with Complete Finacle Software Setup, improving transaction time by 20%.<br>
-          Managed patching operations for systems and applications, including identifying and deploying patches in Kumari Bank 
-        </p>
-
-        <p class="timeline-text">
-
-          Experienced Backend Developer with hands-on expertise in Finacle Core Banking System, Java Spring Framework, Oracle Database, and IBM WebSphere Application Server (WAS). Successfully completed data migration projects for top banks in Kathmandu, including NIC ASIA Bank, Prabhu Bank, and Global IME Bank and Kumari Bank
-        </p>
-      </li>
-
-      <li class="timeline-item">
-
-        <h4 class="h4 timeline-item-title">Oracle Database Administrator, Max International</h4>
-
-        <span>November 2019 — April 2022</span>
-
-        <p class="timeline-text">
-          Assisted in the design and maintenance of Oracle databases for NIC Asia Bank, ensuring 99.9% uptime.<br>
-          Provided critical database support and performance optimization to ensure business continuity.
-        </p>
-
-      </li>
-
-    </ol>
-
-  </section>
-
-  <section class="timeline">
-
-    <div class="title-wrapper">
-      <div class="icon-box">
-        <ion-icon name="folder-outline"></ion-icon>
-      </div>
-
-      <h3 class="h3">Projects</h3>
-    </div>
-
-    <ol class="timeline-list">
-
-      <li class="timeline-item">
-
-        <h4 class="h4 timeline-item-title">Cloud Infrastructure Setup (AWS)</h4>
-
-        <span>January 2024 — April 2024</span>
-
-        <p class="timeline-text">
-          Built scalable cloud infrastructure on AWS with EC2, S3, and Load Balancers for high-traffic applications.<br>
-          Automated deployments using Terraform and implemented CI/CD pipelines for continuous updates.
-        </p>
-
-      </li>
-
-      <li class="timeline-item">
-
-        <h4 class="h4 timeline-item-title">Realtor Website (JavaScript, PHP, HTML5, Node.js)</h4>
-
-        <span>July 2023 — September 2023</span>
-
-        <p class="timeline-text">
-          Developed a dynamic real estate website with property listings, secure data handling, and integration of front-end (React) and back-end (Node.js, PHP) technologies.<br>
-          Incorporated database management with SQL for efficient querying and data storage.
-        </p>
-
-      </li>
-
-      <li class="timeline-item">
-
-        <h4 class="h4 timeline-item-title">Random Image Gallery Web Application (React)</h4>
-
-        <span>May 2023 — June 2023</span>
-
-        <p class="timeline-text">
-          Created a responsive image gallery using React and the Unsplash API, hosted on AWS with CI/CD deployment.
-        </p>
-
-      </li>
-
-    </ol>
-
-  </section>
-
-</article>
-
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="projects">
-
-        <header>
-          <h2 class="h2 article-title">Projects</h2>
-        </header>
-
-        <section class="projects">
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <!-- New Project Code Starts -->
-<li class="project-item active" data-filter-item data-category="web development">
-  <a href="#" onclick="openModal('projectModal5')">
-
-    <figure class="project-img">
-      <div class="project-item-icon-box">
-        <ion-icon name="eye-outline"></ion-icon>
-      </div>
-
-      <img src="./assets/images/shashank_daju.png" alt="ecommerce" loading="lazy">
-    </figure>
-
-    <h3 class="project-title">Ecommerce Full Stack Website - Buy Clothes Online - React, Node.js, MongoDB</h3>
-
-    <p class="project-category">Web Application</p>
-
-  </a>
-</li>
-
-<!-- Modal Structure for New Project -->
-<div id="projectModal5" class="modal">
-  <div class="modal-content">
-    <div class="title-container">
-      <h3 style="color: white;">Ecommerce Full Stack Website - Buy Clothes Online - React, Node.js  and MongoDB</h3>
-      <span class="close">&times;</span>
-    </div>              
-
-    <img src="./assets/images/shashank_daju.png" alt="ecommerce" loading="lazy" class="modal-image">
-      <p style="margin-top: 15px; text-align: justify;">This is a Full Stack (MERN) Stack  ecommerce website designed for online clothing purchases using REACT JS FOR Frontend and Node.js for Backend and MongoDb for Database Connection . It includes user authentication, product filtering, shopping cart integration, and a secure checkout process.</p>
-      <div class="button-container">
-        <a href="#" class="button" target="_blank">Demo</a>
-        <a href="#" class="button" target="_blank">Source Code</a>
-    </div>                
-  </div>
-</div>
-<!-- New Project Code Ends -->
-
-
-
-
-
-
-<!-- New Project Car Rental  Code Starts -->
-<li class="project-item active" data-filter-item data-category="web development">
-  <a href="#" onclick="openModal('projectModal5')">
-
-    <figure class="project-img">
-      <div class="project-item-icon-box">
-        <ion-icon name="eye-outline"></ion-icon>
-      </div>
-
-      <img src="./assets/images/car.png" alt="ecommerce" loading="lazy">
-    </figure>
-
-    <h3 class="project-title">Car Rental Website - NEXT JS and Typescript</h3>
-
-    <p class="project-category">Web Application</p>
-
-  </a>
-</li>
-<!-- Modal Structure for New  Project  car rental -->
-<div id="projectModal5" class="modal">
-  <div class="modal-content">
-    <div class="title-container">
-      <h3 style="color: white;">Car Rental Website - NEXT JS and Typescript Used</h3>
-      <span class="close">&times;</span>
-    </div>              
-
-    <img src="./assets/images/car.png" alt="ecommerce" loading="lazy" class="modal-image">
-      <p style="margin-top: 15px; text-align: justify;">This is a  Car Rental  website designed for Renting Cars  based on hourly basis or one day Its made using REACT NEXT  JS ,TypeScript  and TailWind CSS . It includes user authentication, product filtering, shopping cart integration, and a secure checkout process.</p>
-      <div class="button-container">
-        <a href="#" class="button" target="_blank">Demo</a>
-        <a href="#" class="button" target="_blank">Source Code</a>
-    </div>                
-  </div>
-</div>
-<!-- New Project Code Ends  car rental-->
-
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#" onclick="openModal('projectModal1')">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/bay.png" alt="realtor" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Realtor Website for Client in California - Beta Version 2.0.2 </h3>
-
-                <p class="project-category">California Personal Realtor Website</p>
-
-              </a>
-            </li>
-
-            <!-- Modal Structure -->
-            <div id="projectModal1" class="modal">
-              <div class="modal-content">
-                <div class="title-container">
-                  <h3 style="color: white;">Realtor Website for my Client in California</h3>
-                  <span class="close">&times;</span>
-                </div>              
-
-                <img src="./assets/images/bay.png" alt="realtor" loading="lazy" class="modal-image">
-                  <p style="margin-top: 15px; text-align: justify;">This is a realtor website created for one of my client Mitra Dev Bhattarai in bay area california. He is a bay area top Realtor.</p>
-                  <div class="button-container">
-                    <a href="https://shashangka-upadhyaya.github.io/Realtor-website/index.html" class="button" target="_blank">Demo</a>
-                    <a href="https://github.com/shashangka-upadhyaya/Realtor-website" class="button" target="_blank">Source Code</a>
-                </div>                
-              </div>
-            </div>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#" onclick="openModal('projectModal2')">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/AWS-Cloud.png" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Random Image Gallery - AWS  S3 Deployed </h3>
-
-                <p class="project-category">Web Application with API Integration</p>
-
-              </a>
-            </li>
-
-            <!-- Modal Structure -->
-            <div id="projectModal2" class="modal">
-              <div class="modal-content">
-                <div class="title-container">
-                  <h3 style="color: white;">Random Image Gallery</h3>
-                  <span class="close">&times;</span>
-                </div>              
-
-                <img src="./assets/images/AWS-Cloud.png" alt="realtor" loading="lazy" class="modal-image">
-                  <p style="margin-top: 15px; text-align: justify;">Developed a responsive React application that dynamically generates a gallery of random images using the Unsplash API. The application is hosted on AWS, utilizing S3 for static content storage and CloudFront for global content delivery (or AWS Amplify for managed CI/CD deployment). The app features user input validation, asynchronous data fetching, and is styled with Styled-Components.
-
-                    Technologies: React, JavaScript, Styled-Components, Unsplash API, AWS S3/CloudFront (or AWS Amplify).</p>
-                  <div class="button-container">
-                    <a href="http://random-image-galleey-react.s3-website.us-east-2.amazonaws.com/" class="button" target="_blank">Demo</a>
-                    <a href="https://github.com/shashangka-upadhyaya/" class="button" target="_blank">Source Code</a>
-                </div>                
-              </div>
-            </div>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#" onclick="openModal('projectModal3')">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/ethics.jpg" alt="fundo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Cybersecurity</h3>
-
-                <p class="project-category">Ethical Hacking Lab Collection</p>
-
-              </a>
-            </li>
-
-            <!-- Modal Structure -->
-            <div id="projectModal3" class="modal">
-              <div class="modal-content">
-                <div class="title-container">
-                  <h3 style="color: white;">Ethical Hacking Lab Collection</h3>
-                  <span class="close">&times;</span>
-                </div>              
-
-                <img src="./assets/images/ethics.jpg" alt="realtor" loading="lazy" class="modal-image">
-                  <p style="margin-top: 15px; text-align: justify;">Developed advanced cybersecurity tools including a network penetration testing lab, a web vulnerability scanner, and a custom keylogger for ethical hacking purposes. 
-                    Demonstrated expertise in Wi-Fi network cracking, password cracking, and ransomware simulation in controlled environments. 
-                    Utilized tools like Aircrack-ng, Metasploit, and OWASP ZAP to perform vulnerability assessments and exploit simulations. 
-                    Enhanced security measures through encryption, reverse shells, and custom steganography tools for secure data transfer.</p>
-                  <div class="button-container">
-                    <!--a href="http://random-image-galleey-react.s3-website.us-east-2.amazonaws.com/" class="button" target="_blank">Demo</a-->
-                    <a href="https://github.com/shashangka-upadhyaya/Cyber-Security-Lab-Works" class="button" target="_blank">Source Code</a>
-                </div>                
-              </div>
-            </div>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#" onclick="openModal('projectModal4')">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/chatbot.jpg" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Intelligent Chatbot with OpenAI</h3>
-
-                <p class="project-category">Large Language Model (LLM)</p>
-
-              </a>
-            </li>
-
-            <!-- Modal Structure -->
-            <div id="projectModal4" class="modal">
-              <div class="modal-content">
-                <div class="title-container">
-                  <h3 style="color: white;">Ethical Hacking Lab Collection</h3>
-                  <span class="close">&times;</span>
-                </div>              
-
-                <img src="./assets/images/chatbot2.webp" alt="realtor" loading="lazy" class="modal-image">
-                  <p style="margin-top: 15px; text-align: justify;">Building an Intelligent Chatbot with OpenAI, Next, and TypeScript</p>
-                  <div class="button-container">
-                    <!--a href="http://random-image-galleey-react.s3-website.us-east-2.amazonaws.com/" class="button" target="_blank">Demo</a-->
-                    <a href="https://github.com/shashangka-upadhyaya/" class="button" target="_blank">Source Code</a>
-                </div>                
-              </div>
-            </div>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="https://api.web3forms.com/submit" class="form" method="post" data-form>
-            <input type="hidden" name="access_key" value="545e2aec-8341-4d10-807c-6c5968003507"/>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section>
-
-      </article>
-
-    </div>
-
-  </main>
-
-
-
-
-
-
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+    <script>
+        window.addEventListener('load', () => {
+            const splash = document.getElementById('splash-screen');
+            const mainContent = document.getElementById('main-content');
+
+            // Set a timer for the splash screen
+            setTimeout(() => {
+                splash.style.opacity = '0';
+                
+                // After the fade out animation
+                setTimeout(() => {
+                    splash.classList.add('hidden');
+                    mainContent.classList.remove('hidden');
+                    
+                    // Initialize scripts that depend on the main content being visible
+                    initializeMainScripts();
+                }, 750); // This should match the transition duration in CSS
+            }, 1000); // Splash screen will be visible for 1 second
+        });
+
+        function initializeMainScripts() {
+            // Lucide Icons
+            lucide.createIcons();
+
+            // Typed.js Animation
+            var typed = new Typed('#typed-headline', {
+                strings: ['DevOps', 'Product Builder', 'AI Enthusiast'],
+                typeSpeed: 50,
+                backSpeed: 30,
+                loop: true,
+                smartBackspace: true,
+            });
+
+            // Theme Toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            const htmlEl = document.documentElement;
+
+            themeToggle.addEventListener('click', () => {
+                htmlEl.classList.toggle('dark');
+                localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+                lucide.createIcons(); // Re-create icons to reflect theme change
+            });
+
+            // On page load, set the theme.
+            // It defaults to dark mode unless the user has explicitly chosen and saved light mode.
+            if (localStorage.getItem('theme') === 'light') {
+                htmlEl.classList.remove('dark');
+            } else {
+                htmlEl.classList.add('dark');
+            }
+            
+            // Mobile Menu
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when a link is clicked
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // Project Filtering
+            const filterBtns = document.querySelectorAll('.project-filter-btn');
+            const projectGrid = document.getElementById('project-grid');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.dataset.filter;
+                    
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category.includes(filter)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Add active class styling
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .project-filter-btn {
+                    padding: 0.5rem 1rem;
+                    border-radius: 9999px;
+                    font-weight: 500;
+                    transition: all 0.2s ease;
+                    border: 2px solid transparent;
+                }
+                .project-filter-btn.active {
+                    background-color: var(--tw-bg-accent, #38bdf8);
+                    color: white;
+                }
+                .project-filter-btn:not(.active) {
+                     background-color: #e5e7eb; /* bg-gray-200 */
+                }
+                .dark .project-filter-btn:not(.active) {
+                     background-color: #374151; /* dark:bg-gray-700 */
+                }
+                 .project-filter-btn:not(.active):hover {
+                     border-color: var(--tw-bg-accent, #38bdf8);
+                }
+            `;
+            document.head.appendChild(style);
+
+
+            // Intersection Observer for fade-in animations
+            const sections = document.querySelectorAll('.section-fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        }
+    </script>
 </body>
-
 </html>
