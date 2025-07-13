@@ -71,6 +71,27 @@
         .hidden {
             display: none;
         }
+        .resume-nav-btn {
+            transition: all 0.3s ease;
+        }
+        .resume-nav-btn:hover {
+            color: var(--tw-bg-accent, #38bdf8);
+        }
+        .resume-nav-btn.active {
+            color: var(--tw-bg-accent, #38bdf8);
+        }
+        /* Ensure projects section is properly visible */
+        #projects {
+            scroll-margin-top: 100px;
+        }
+        /* Ensure all sections have proper scroll margin */
+        section[id] {
+            scroll-margin-top: 100px;
+        }
+        /* Force smooth scrolling */
+        html {
+            scroll-behavior: smooth !important;
+        }
     </style>
     <script>
         tailwind.config = {
@@ -102,6 +123,16 @@
         .splash-fadeout {
             animation: splash-fadeout 0.75s ease-out 3s forwards;
         }
+      #resume-modal input,
+      #resume-modal textarea {
+        background-color: #fff !important;
+        color: #222 !important;
+      }
+      #resume-modal input::placeholder,
+      #resume-modal textarea::placeholder {
+        color: #888 !important;
+        opacity: 1;
+      }
     </style>
     <script>
         // Add a CSS fallback in case JS fails
@@ -116,6 +147,207 @@
     <div id="splash-screen">
         <img id="splash-image" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Man coding on a computer GIF">
         <h1 id="splash-text">Welcome to Shash World!</h1>
+    </div>
+
+    <!-- Resume Modal -->
+    <div id="resume-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white dark:bg-dark-card rounded-lg shadow-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button id="close-resume-modal" class="absolute top-4 right-4 text-gray-400 hover:text-accent text-2xl z-10 bg-white dark:bg-dark-card rounded-full w-8 h-8 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">&times;</button>
+            
+            <!-- Resume Navigation -->
+            <div class="flex justify-center mb-6 border-b border-gray-200 dark:border-gray-700">
+                <button class="resume-nav-btn active px-4 py-2 text-sm font-medium border-b-2 border-accent" data-section="resume-overview">Overview</button>
+                <button class="resume-nav-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent" data-section="resume-education">Education</button>
+                <button class="resume-nav-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent" data-section="resume-experience">Experience</button>
+                <button class="resume-nav-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent" data-section="resume-skills">Skills</button>
+                <button class="resume-nav-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent" data-section="resume-projects">Projects</button>
+            </div>
+
+            <!-- Resume Content -->
+            <div id="resume-content" class="space-y-6">
+                <!-- Overview Section -->
+                <div id="resume-overview" class="resume-section">
+                    <div class="text-center mb-6">
+                        <h1 class="text-3xl font-bold text-gray-900 dark:text-dark-heading mb-2">SHASHANGKA UPADHYAYA</h1>
+                        <p class="text-lg text-gray-600 dark:text-dark-text mb-2">Authorized to work in USA | Willing to relocate</p>
+                        <p class="text-lg text-gray-600 dark:text-dark-text mb-4">Cloud and Backend Engineer | Kubernetes | Bay Area California</p>
+                        <div class="flex justify-center space-x-4 text-sm text-gray-600 dark:text-dark-text">
+                            <span>shashangka.upa@gmail.com</span>
+                            <span>•</span>
+                            <span>Portfolio</span>
+                            <span>•</span>
+                            <span>LinkedIn</span>
+                            <span>•</span>
+                            <span>GitHub</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Section -->
+                <div id="resume-education" class="resume-section hidden">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-dark-heading mb-4">EDUCATION</h2>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-accent pl-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-heading">University of Central Missouri</h3>
+                                    <p class="text-gray-600 dark:text-dark-text">MS in Computer Science</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-600 dark:text-dark-text">Lee's Summit, Missouri, USA</p>
+                                    <p class="text-sm text-gray-600 dark:text-dark-text">Aug 2023 - May 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-l-4 border-accent pl-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-heading">Tribhuvan University</h3>
+                                    <p class="text-gray-600 dark:text-dark-text">BS in Computer Science</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-600 dark:text-dark-text">Kathmandu, Nepal</p>
+                                    <p class="text-sm text-gray-600 dark:text-dark-text">Aug 2015 - Dec 2019</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Section -->
+                <div id="resume-experience" class="resume-section hidden">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-dark-heading mb-4">PROFESSIONAL EXPERIENCE</h2>
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-accent pl-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-heading">Cloud Solutions Engineer</h3>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-600 dark:text-dark-text">Cas Total Solution (INFOSYS Partner)</p>
+                                    <p class="text-sm text-gray-600 dark:text-dark-text">Kathmandu, Nepal</p>
+                                    <p class="text-sm text-gray-600 dark:text-dark-text">August 2022 - July 2023</p>
+                                </div>
+                            </div>
+                            <div class="space-y-3 text-sm">
+                                <div class="bg-gray-50 dark:bg-gray-800 p-3 rounded">
+                                    <h4 class="font-semibold text-accent mb-2">Project 1: Kubernetes-Orchestrated Core Banking Deployment</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                                        <li>Deployed Finacle 10 modules using containerization and orchestrated services via Kubernetes deployments with the Implementation of Prometheus and Grafana for real-time observability, enabling a 15% reduction in latency.</li>
+                                        <li>Automated daily reconciliation and transaction integrity checks using Bash Scripting and SQL, saving 3 hours/week in manual processing also with the 12% increase in deployment efficiency.</li>
+                                        <li>Migrated workloads to Microsoft Azure; created reusable deployment templates with Terraform for UAT and QA environments; Built 20 CI/CD pipelines on Azure DevOps, integrating SonarQube for automated security and compliance.</li>
+                                        <li>Developed and implemented a suite of Datadog monitors, including REST API monitoring, enhancing system oversight and reducing incident response time by 15 percent.</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-50 dark:bg-gray-800 p-3 rounded">
+                                    <h4 class="font-semibold text-accent mb-2">Project 2: Backend-Driven Finacle CBS Migration to AWS Cloud</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                                        <li>Designed and maintained RESTful APIs for configuration and reporting services, and later converted high-volume endpoints to GraphQL and improve query efficiency reducing data over-fetching by 40%.</li>
+                                        <li>Migrated Finacle Core Banking from legacy infrastructure to Finacle 10 on AWS, leveraging EC2, S3, RDS (PostgreSQL), CloudWatch, IAM, and Lambda to modernize infrastructure, automate tasks, and improve system observability.</li>
+                                        <li>Automated backend data ingestion and reporting pipelines using Python and Bash, and implemented robust CI/CD workflows with Jenkins for seamless deployments across staging and production.</li>
+                                        <li>Developed SQL-powered Tableau dashboards to track migration KPIs, data sync health, and branch readiness across 200+ locations; seamless core system merger by deploying Docker containers for Finacle integration modules and supporting services.</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-50 dark:bg-gray-800 p-3 rounded">
+                                    <h4 class="font-semibold text-accent mb-2">Project 3: DevOps-Enabled Transformation</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                                        <li>Developed and maintained secure backend APIs for core banking using Java, Spring Boot, and Oracle DB ensuring high availability and transactional integrity.</li>
+                                        <li>Assisted with Infrastructure as Code using CloudFormation to replicate environments across branches; Supported smooth code releases UAT and go-live, achieving zero critical defects in production.</li>
+                                        <li>Applied DevOps practices using Git, GitHub Actions, Docker, Helm, and Kubernetes to automate deployment of core banking microservices. Ensured reliability and scalability across environments with CI/CD integration.</li>
+                                        <li>Enhanced deployment visibility and rollback safety through artifact versioning and GitOps strategies, while integrating log management with the ELK Stack to support audit trails and operational insights.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-l-4 border-accent pl-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-heading">Network Administrator</h3>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-600 dark:text-dark-text">IMARK Digital, Kathmandu, Nepal</p>
+                                    <p class="text-sm text-gray-600 dark:text-dark-text">June 2018 - Aug 2019</p>
+                                </div>
+                            </div>
+                            <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                                <li>Designed and supported enterprise network systems, boosting security and stability through deployment of routers, switches, firewalls, and wireless access points.</li>
+                                <li>Proactively monitored and fine-tuned network operations to quickly resolve issues, improving system performance and minimizing downtime.</li>
+                                <li>Set up and maintained firewalls and other network defenses to protect against cyber threats.</li>
+                                <li>Administered intrusion detection and prevention systems, strengthening the organization's cybersecurity posture.</li>
+                                <li>Ensured VPN reliability with 99.9% uptime, maintaining secure and consistent access to internal resources.</li>
+                                <li>Managed essential network services such as DNS, DHCP, and LDAP, facilitating smooth network operations and authentication.</li>
+                                <li>Oversaw user access and identity management through systems like Active Directory and LDAP to enforce secure login protocols.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <div id="resume-skills" class="resume-section hidden">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-dark-heading mb-4">TECHNICAL SKILLS</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="font-semibold text-accent mb-2">Programming Languages</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">Python, JavaScript, Shell Script, PowerShell, HTML, CSS</p>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-accent mb-2">Web Application Development</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">React, Node.js, REST APIs, HTML/CSS</p>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-accent mb-2">Cloud Platforms & Services</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">AWS (Lambda, EC2, S3, ECS, RDS, Aurora, IoT Core, VPC, WAF, Route 53, SSM, CodeCommit, CodeBuild, CodePipeline, API Gateway, KMS, Secret Manager, Trusted Advisor, Cost Explorer, SQS, SNS), Serverless, Microservices, IaaS, PaaS, Cloud Architecture</p>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-accent mb-2">DevOps & CI/CD</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">Git, GitHub, Jenkins, Docker, Infrastructure as Code (IAC), CloudFormation</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="font-semibold text-accent mb-2">Databases</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">MySQL, PostgreSQL, DynamoDB, AWS RDS, Aurora</p>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-accent mb-2">Security</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">IAM, OAuth, SAML, SSO, Cloud Security</p>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-accent mb-2">Testing & Automation</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">Automated Testing, Behavior Driven Development (BDD), Debugging</p>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-accent mb-2">Architecture & Design</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">Software Architecture, Containers, Disaster Recovery</p>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-accent mb-2">Collaboration & Methodologies</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">Agile, Scrum, Requirements Gathering, Process Automation, Communication, Technical Leadership</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div id="resume-projects" class="resume-section hidden">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-dark-heading mb-4">PRODUCT DEVELOPMENT INITIATIVES</h2>
+                    <div class="border-l-4 border-accent pl-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-heading">Founder of BubbleBook.AI</h3>
+                            <div class="text-right">
+                                <p class="text-sm text-gray-600 dark:text-dark-text">March 2025 - present</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-dark-text mb-3">Bubble Book (AI-Powered Networking Platform) Demo</p>
+                        <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                            <li>Currently building a real-time SaaS product for professional and social matching, featuring a Flutter-based mobile frontend, a Next.js-based web frontend, and a scalable Python microservices backend.</li>
+                            <li>Developing a scalable backend architecture using microservices, integrating AI-powered matching algorithms (collaborative filtering and NLP-based profile analysis), and leveraging AWS SNS for robust push notifications.</li>
+                            <li>Designing and deploying core infrastructure on AWS (EC2, RDS for PostgreSQL, S3) using Terraform for Infrastructure as Code (IaC), enabling environment consistency and rapid scalability.</li>
+                            <li>Implementing robust CI/CD pipelines using GitHub Actions for automated testing and deployment, ensuring high availability, data security, and seamless feature delivery.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
     </div>
 
     <div id="main-content" class="hidden">
@@ -161,7 +393,9 @@
                 </p>
                 <div class="flex justify-center items-center space-x-4">
                     <a href="#projects" class="bg-accent hover:bg-accent-hover text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">See Projects</a>
-                    <a href="https://placehold.co/800x1100/png?text=Resume.pdf" target="_blank" class="bg-gray-200 dark:bg-dark-card hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">View Résumé</a>
+                    <!-- Update both résumé buttons to type="button" and add IDs -->
+                    <!-- Hero Section Button -->
+                    <a id="view-resume-btn" href="#" type="button" class="bg-gray-200 dark:bg-dark-card hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">View Résumé</a>
                     <a href="#contact" class="bg-gray-200 dark:bg-dark-card hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">Connect with Me</a>
                 </div>
             </section>
@@ -176,16 +410,18 @@
                             <h3 class="text-2xl font-bold text-gray-900 dark:text-dark-heading">Shashangka Upadhyaya</h3>
                             <p class="text-gray-600 dark:text-dark-text">Bay Area, CA</p>
                             <div class="flex justify-center space-x-4 mt-4">
-                                <a href="#" class="text-gray-500 hover:text-accent"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
-                                <a href="#" class="text-gray-500 hover:text-accent"><i data-lucide="github" class="w-6 h-6"></i></a>
+                                <a href="https://www.linkedin.com/in/shashup/" target="_blank" class="text-gray-500 hover:text-accent"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                                <a href="https://github.com/shashangka-upadhyaya" target="_blank" class="text-gray-500 hover:text-accent"><i data-lucide="github" class="w-6 h-6"></i></a>
                                 <a href="mailto:shashangka.upa@gmail.com" class="text-gray-500 hover:text-accent"><i data-lucide="mail" class="w-6 h-6"></i></a>
                             </div>
                         </div>
                         <div class="md:w-2/3">
                             <p class="text-lg mb-6 leading-relaxed">
-                                Based in the Bay Area, I am a new grad of  Master's student in Computer Science at the University of Central Missouri, with a deep passion for building scalable, AI-powered software. As the founder of BubbleBook.AI, an innovative real-time networking platform, I have hands-on experience in the entire product lifecycle, from conception to deployment. My expertise is backed by industry-recognized certifications from AWS, Azure, and Google's Generative AI program.
+                                Based in the Bay Area, I am a Master's student in Computer Science at the University of California, Merced, with a deep passion for building scalable, AI-powered software. As the founder of BubbleBook.AI, an innovative real-time networking platform, I have hands-on experience in the entire product lifecycle, from conception to deployment. My expertise is backed by industry-recognized certifications from AWS, Azure, and Google's Generative AI program.
                             </p>
-                            <a href="https://placehold.co/800x1100/png?text=Resume.pdf" target="_blank" class="inline-block bg-accent hover:bg-accent-hover text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">Download Résumé</a>
+                            <!-- Update both résumé buttons to type="button" and add IDs -->
+                            <!-- About Me Section Button -->
+                            <a id="download-resume-btn" href="#" type="button" class="inline-block bg-accent hover:bg-accent-hover text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">Download Résumé</a>
                         </div>
                     </div>
                 </div>
@@ -253,7 +489,7 @@
                                             <p class="text-sm text-gray-600 dark:text-dark-text">Amazon Web Services</p>
                                         </div>
                                     </div>
-                                    <a href="https://www.linkedin.com/in/shashup/details/certifications/" target="_blank" style="z-index:50; pointer-events:auto;" class="flex items-center bg-accent hover:bg-accent-hover text-white font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-105 ml-4">Credential ID</a>
+                                    <a href="https://www.credly.com/badges/92392cfb-e11a-4140-910c-91acb5dec5c8/public_url" target="_blank" style="z-index:50; pointer-events:auto;" class="flex items-center bg-accent hover:bg-accent-hover text-white font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-105 ml-4">Credential ID</a>
                                 </div>
                                 <div class="flex items-center p-4 bg-gray-100 dark:bg-dark-card rounded-lg justify-between relative">
                                     <div class="flex items-center">
@@ -263,7 +499,7 @@
                                             <p class="text-sm text-gray-600 dark:text-dark-text">Microsoft</p>
                                         </div>
                                     </div>
-                                    <a href="https://www.linkedin.com/in/shashup/details/certifications/" target="_blank" style="z-index:50; pointer-events:auto;" class="flex items-center bg-accent hover:bg-accent-hover text-white font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-105 ml-4">Credential ID</a>
+                                    <a href="https://learn.microsoft.com/en-us/users/shashangkaupadhyaya-2770/credentials/2f791f8d9fd33aac" target="_blank" style="z-index:50; pointer-events:auto;" class="flex items-center bg-accent hover:bg-accent-hover text-white font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-105 ml-4">Credential ID</a>
                                 </div>
                                 <div class="flex items-center p-4 bg-gray-100 dark:bg-dark-card rounded-lg justify-between relative">
                                     <div class="flex items-center">
@@ -273,7 +509,7 @@
                                             <p class="text-sm text-gray-600 dark:text-dark-text">Google Cloud</p>
                                         </div>
                                     </div>
-                                    <a href="https://www.linkedin.com/in/shashup/details/certifications/" target="_blank" style="z-index:50; pointer-events:auto;" class="flex items-center bg-accent hover:bg-accent-hover text-white font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-105 ml-4">Credential ID</a>
+                                    <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/FO858V28WOIX" target="_blank" style="z-index:50; pointer-events:auto;" class="flex items-center bg-accent hover:bg-accent-hover text-white font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-105 ml-4">Credential ID</a>
                                 </div>
                             </div>
                         </div>
@@ -368,6 +604,24 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Project 3 -->
+                        <div class="project-card bg-white dark:bg-dark-card rounded-lg shadow-lg overflow-hidden" data-category="Web Development SaaS">
+                            <img src="assets/images/bay.png" alt="Realtor Website" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-dark-heading">Realtor Website for Client in California</h3>
+                                <p class="text-sm mb-4">A professional realtor website created for Mitra Dev Bhattarai, a top Bay Area realtor. Features modern design, property listings, and client management tools.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">JavaScript</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">PHP</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">HTML5</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Node.js</span>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <a href="https://github.com/shashangka-upadhyaya/Realtor-website" target="_blank" class="text-gray-500 hover:text-accent"><i data-lucide="github"></i></a>
+                                    <a href="https://shashangka-upadhyaya.github.io/Realtor-website/index.html" target="_blank" class="text-gray-500 hover:text-accent"><i data-lucide="external-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
                          <!-- Add more projects as needed -->
                     </div>
                 </div>
@@ -384,8 +638,8 @@
                         Say Hello
                     </a>
                     <div class="flex justify-center space-x-6 mt-12">
-                        <a href="#" class="text-gray-500 hover:text-accent"><i data-lucide="github" class="w-8 h-8"></i></a>
-                        <a href="#" class="text-gray-500 hover:text-accent"><i data-lucide="linkedin" class="w-8 h-8"></i></a>
+                        <a href="https://github.com/shashangka-upadhyaya" target="_blank" class="text-gray-500 hover:text-accent"><i data-lucide="github" class="w-8 h-8"></i></a>
+                        <a href="https://www.linkedin.com/in/shashup/" target="_blank" class="text-gray-500 hover:text-accent"><i data-lucide="linkedin" class="w-8 h-8"></i></a>
                         <a href="#home" class="text-gray-500 hover:text-accent"><i data-lucide="briefcase" class="w-8 h-8"></i></a>
                     </div>
                 </div>
@@ -531,7 +785,101 @@
             sections.forEach(section => {
                 observer.observe(section);
             });
+
+            // Resume Modal Logic
+            const resumeModal = document.getElementById('resume-modal');
+            const closeResumeModal = document.getElementById('close-resume-modal');
+            const viewResumeBtn = document.getElementById('view-resume-btn');
+            const downloadResumeBtn = document.getElementById('download-resume-btn');
+            const resumeNavBtns = document.querySelectorAll('.resume-nav-btn');
+            const resumeSections = document.querySelectorAll('.resume-section');
+
+            function openModal(e) {
+                e.preventDefault();
+                resumeModal.classList.remove('hidden');
+                // Show overview section by default
+                showResumeSection('resume-overview');
+            }
+            
+            function closeModal() {
+                resumeModal.classList.add('hidden');
+            }
+            
+            function showResumeSection(sectionName) {
+                // Hide all sections
+                resumeSections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+                
+                // Show the selected section
+                const targetSection = document.getElementById(sectionName);
+                if (targetSection) {
+                    targetSection.classList.remove('hidden');
+                }
+                
+                // Update navigation buttons
+                resumeNavBtns.forEach(btn => {
+                    btn.classList.remove('active', 'border-accent');
+                    btn.classList.add('border-transparent');
+                });
+                
+                const activeBtn = document.querySelector(`[data-section="${sectionName}"]`);
+                if (activeBtn) {
+                    activeBtn.classList.add('active', 'border-accent');
+                    activeBtn.classList.remove('border-transparent');
+                }
+            }
+            
+            // Add navigation event listeners
+            resumeNavBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const sectionName = btn.dataset.section;
+                    showResumeSection(sectionName);
+                });
+            });
+            
+            if (viewResumeBtn) viewResumeBtn.addEventListener('click', openModal);
+            if (downloadResumeBtn) downloadResumeBtn.addEventListener('click', openModal);
+            if (closeResumeModal) closeResumeModal.addEventListener('click', closeModal);
+
+            // Reliable smooth scrolling with proper timing
+            function setupSmoothScrolling() {
+                document.querySelectorAll('header a[href^="#"], #main-content a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            console.log('Scrolling to:', targetId);
+                            
+                            // Close mobile menu if open
+                            const mobileMenu = document.getElementById('mobile-menu');
+                            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                                mobileMenu.classList.add('hidden');
+                            }
+                            
+                            // Get header height
+                            const headerHeight = document.querySelector('header').offsetHeight;
+                            
+                            // Calculate target position
+                            const targetPosition = targetElement.offsetTop - headerHeight - 30;
+                            
+                            // Smooth scroll to calculated position
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            }
+            
+            // Setup scrolling after a short delay to ensure DOM is ready
+            setTimeout(setupSmoothScrolling, 100);
         }
+        
+
     </script>
 </body>
 </html>
