@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shashangka Upadhyaya - Cloud & Backend Engineer</title>
+    <title>Shashangka Upadhyaya - Data Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
@@ -143,47 +143,41 @@
 </head>
 <body class="bg-white dark:bg-dark-bg text-gray-700 dark:text-dark-text transition-colors duration-300">
 
-    <!-- Splash Screen -->
     <div id="splash-screen">
         <img id="splash-image" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Man coding on a computer GIF">
         <h1 id="splash-text">Welcome to Shash World!</h1>
     </div>
 
-    <!-- Resume Modal -->
     <div id="resume-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
         <div class="bg-white dark:bg-dark-card rounded-lg shadow-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
             <button id="close-resume-modal" class="absolute top-4 right-4 text-gray-400 hover:text-accent text-2xl z-10 bg-white dark:bg-dark-card rounded-full w-8 h-8 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">&times;</button>
             
-            <!-- Resume Navigation -->
             <div class="flex justify-center mb-6 border-b border-gray-200 dark:border-gray-700">
                 <button class="resume-nav-btn active px-4 py-2 text-sm font-medium border-b-2 border-accent" data-section="resume-overview">Overview</button>
-                <button class="resume-nav-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent" data-section="resume-education">Education</button>
                 <button class="resume-nav-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent" data-section="resume-experience">Experience</button>
-                <button class="resume-nav-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent" data-section="resume-skills">Skills</button>
                 <button class="resume-nav-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent" data-section="resume-projects">Projects</button>
+                <button class="resume-nav-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent" data-section="resume-skills">Skills</button>
+                <button class="resume-nav-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent" data-section="resume-education">Education</button>
             </div>
 
-            <!-- Resume Content -->
             <div id="resume-content" class="space-y-6">
-                <!-- Overview Section -->
                 <div id="resume-overview" class="resume-section">
                     <div class="text-center mb-6">
                         <h1 class="text-3xl font-bold text-gray-900 dark:text-dark-heading mb-2">SHASHANGKA UPADHYAYA</h1>
                         <p class="text-lg text-gray-600 dark:text-dark-text mb-2">Authorized to work in USA | Willing to relocate</p>
-                        <p class="text-lg text-gray-600 dark:text-dark-text mb-4">Cloud and Backend Engineer | Kubernetes | Bay Area California</p>
+                        <p class="text-lg text-gray-600 dark:text-dark-text mb-4">Data Engineer | MLOps | Bay Area California</p>
                         <div class="flex justify-center space-x-4 text-sm text-gray-600 dark:text-dark-text">
                             <span>shashangka.upa@gmail.com</span>
                             <span>•</span>
-                            <span>Portfolio</span>
+                            <a href="http://shashupadhyaya.com" target="_blank" class="hover:text-accent">Portfolio</a>
                             <span>•</span>
-                            <span>LinkedIn</span>
+                            <a href="https://linkedin.com/in/shashup/" target="_blank" class="hover:text-accent">LinkedIn</a>
                             <span>•</span>
-                            <span>GitHub</span>
+                            <a href="https://github.com/shashangka-upadhyaya" target="_blank" class="hover:text-accent">GitHub</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Education Section -->
                 <div id="resume-education" class="resume-section hidden">
                     <h2 class="text-2xl font-bold text-gray-900 dark:text-dark-heading mb-4">EDUCATION</h2>
                     <div class="space-y-4">
@@ -191,7 +185,7 @@
                             <div class="flex justify-between items-start">
                                 <div>
                                     <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-heading">University of Central Missouri</h3>
-                                    <p class="text-gray-600 dark:text-dark-text">MS in Computer Science</p>
+                                    <p class="text-gray-600 dark:text-dark-text">MS in Computer Science | AI and Data Science Specialized</p>
                                 </div>
                                 <div class="text-right">
                                     <p class="text-sm text-gray-600 dark:text-dark-text">Lee's Summit, Missouri, USA</p>
@@ -203,7 +197,7 @@
                             <div class="flex justify-between items-start">
                                 <div>
                                     <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-heading">Tribhuvan University</h3>
-                                    <p class="text-gray-600 dark:text-dark-text">BS in Computer Science</p>
+                                    <p class="text-gray-600 dark:text-dark-text">BS in Computer Science | Minor: Information Technology</p>
                                 </div>
                                 <div class="text-right">
                                     <p class="text-sm text-gray-600 dark:text-dark-text">Kathmandu, Nepal</p>
@@ -214,134 +208,137 @@
                     </div>
                 </div>
 
-                <!-- Experience Section -->
                 <div id="resume-experience" class="resume-section hidden">
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-dark-heading mb-4">PROFESSIONAL EXPERIENCE</h2>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-dark-heading mb-4">EXPERIENCE</h2>
                     <div class="space-y-6">
                         <div class="border-l-4 border-accent pl-4">
                             <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-heading">Cloud Solutions Engineer</h3>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-heading">Data Engineer | Product Launch Initiative</h3>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-600 dark:text-dark-text">Bubblebook.ai</p>
+                                    <p class="text-sm text-gray-600 dark:text-dark-text">March 2025 - Present</p>
+                                </div>
+                            </div>
+                            <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                                <li>Architected Data Pipelines with scalable ETL / ELT using Spark and Airflow, cutting latency by 60%.</li>
+                                <li>Automated RAG for Optimizing the Pinecone vector database to achieve <100ms P95 query latency.</li>
+                                <li>Deployed production-grade MLOps Framework using Docker, Kubernetes, Grafana with 99% uptime.</li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-accent pl-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-heading">Data Engineer</h3>
                                 <div class="text-right">
                                     <p class="text-sm text-gray-600 dark:text-dark-text">Cas Total Solution (INFOSYS Partner)</p>
-                                    <p class="text-sm text-gray-600 dark:text-dark-text">Kathmandu, Nepal</p>
                                     <p class="text-sm text-gray-600 dark:text-dark-text">August 2022 - July 2023</p>
                                 </div>
                             </div>
                             <div class="space-y-3 text-sm">
                                 <div class="bg-gray-50 dark:bg-gray-800 p-3 rounded">
-                                    <h4 class="font-semibold text-accent mb-2">Project 1: Kubernetes-Orchestrated Core Banking Deployment</h4>
+                                    <h4 class="font-semibold text-accent mb-2">Project 1: AWS MLOps and Data Engineering Platform</h4>
                                     <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
-                                        <li>Deployed Finacle 10 modules using containerization and orchestrated services via Kubernetes deployments with the Implementation of Prometheus and Grafana for real-time observability, enabling a 15% reduction in latency.</li>
-                                        <li>Automated daily reconciliation and transaction integrity checks using Bash Scripting and SQL, saving 3 hours/week in manual processing also with the 12% increase in deployment efficiency.</li>
-                                        <li>Migrated workloads to Microsoft Azure; created reusable deployment templates with Terraform for UAT and QA environments; Built 20 CI/CD pipelines on Azure DevOps, integrating SonarQube for automated security and compliance.</li>
-                                        <li>Developed and implemented a suite of Datadog monitors, including REST API monitoring, enhancing system oversight and reducing incident response time by 15 percent.</li>
+                                        <li>Developed AWS data platform for processing 15M+ daily banking transactions using Kafka and Spark.</li>
+                                        <li>Orchestrated AWS SageMaker ML pipeline deployment time from 6 weeks to under 3 days.</li>
+                                        <li>Operationalized <100ms fraud detection model, for reducing financial risk of the core payment system.</li>
                                     </ul>
                                 </div>
                                 <div class="bg-gray-50 dark:bg-gray-800 p-3 rounded">
-                                    <h4 class="font-semibold text-accent mb-2">Project 2: Backend-Driven Finacle CBS Migration to AWS Cloud</h4>
+                                    <h4 class="font-semibold text-accent mb-2">Project 2: AWS-Based Data Migration and Validation for Finacle Core Banking System</h4>
                                     <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
-                                        <li>Designed and maintained RESTful APIs for configuration and reporting services, and later converted high-volume endpoints to GraphQL and improve query efficiency reducing data over-fetching by 40%.</li>
-                                        <li>Migrated Finacle Core Banking from legacy infrastructure to Finacle 10 on AWS, leveraging EC2, S3, RDS (PostgreSQL), CloudWatch, IAM, and Lambda to modernize infrastructure, automate tasks, and improve system observability.</li>
-                                        <li>Automated backend data ingestion and reporting pipelines using Python and Bash, and implemented robust CI/CD workflows with Jenkins for seamless deployments across staging and production.</li>
-                                        <li>Developed SQL-powered Tableau dashboards to track migration KPIs, data sync health, and branch readiness across 200+ locations; seamless core system merger by deploying Docker containers for Finacle integration modules and supporting services.</li>
-                                    </ul>
-                                </div>
-                                <div class="bg-gray-50 dark:bg-gray-800 p-3 rounded">
-                                    <h4 class="font-semibold text-accent mb-2">Project 3: DevOps-Enabled Transformation</h4>
-                                    <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
-                                        <li>Developed and maintained secure backend APIs for core banking using Java, Spring Boot, and Oracle DB ensuring high availability and transactional integrity.</li>
-                                        <li>Assisted with Infrastructure as Code using CloudFormation to replicate environments across branches; Supported smooth code releases UAT and go-live, achieving zero critical defects in production.</li>
-                                        <li>Applied DevOps practices using Git, GitHub Actions, Docker, Helm, and Kubernetes to automate deployment of core banking microservices. Ensured reliability and scalability across environments with CI/CD integration.</li>
-                                        <li>Enhanced deployment visibility and rollback safety through artifact versioning and GitOps strategies, while integrating log management with the ELK Stack to support audit trails and operational insights.</li>
+                                        <li>Launched Python & AWS Glue pipelines complex schema transformations ensuring 99% data fidelity.</li>
+                                        <li>Utilized AWS Step Functions to automate migration flow reducing production cutover window by 50%.</li>
+                                        <li>Built a data reconciliation tool in Python/SQL that cut manual validation by 95% for a reliable backend.</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="border-l-4 border-accent pl-4">
                             <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-heading">Automation Enginner</h3>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-heading">Cloud Data Engineer</h3>
                                 <div class="text-right">
-                                    <p class="text-sm text-gray-600 dark:text-dark-text">IMARK Digital, Kathmandu, Nepal</p>
-                                    <p class="text-sm text-gray-600 dark:text-dark-text">2020 -2022</p>
+                                    <p class="text-sm text-gray-600 dark:text-dark-text">IMARK Solution</p>
+                                    <p class="text-sm text-gray-600 dark:text-dark-text">Feb 2020 - Jan 2022</p>
                                 </div>
                             </div>
-                            <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-300">
-                                <li>Designed and supported enterprise network systems, boosting security and stability through deployment of routers, switches, firewalls, and wireless access points.</li>
-                                <li>Proactively monitored and fine-tuned network operations to quickly resolve issues, improving system performance and minimizing downtime.</li>
-                                <li>Set up and maintained firewalls and other network defenses to protect against cyber threats.</li>
-                                <li>Administered intrusion detection and prevention systems, strengthening the organization's cybersecurity posture.</li>
-                                <li>Ensured VPN reliability with 99.9% uptime, maintaining secure and consistent access to internal resources.</li>
-                                <li>Managed essential network services such as DNS, DHCP, and LDAP, facilitating smooth network operations and authentication.</li>
-                                <li>Oversaw user access and identity management through systems like Active Directory and LDAP to enforce secure login protocols.</li>
-                            </ul>
+                            <div class="space-y-3 text-sm">
+                                <div class="bg-gray-50 dark:bg-gray-800 p-3 rounded">
+                                    <h4 class="font-semibold text-accent mb-2">Project 3: Secure Clinical Trial Data and Analytics Platform</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                                        <li>Designed S3 Data Lake into a SnowFlake Warehouse to improve clinical team workflow by over 90%.</li>
+                                        <li>Automated Cloud-Based data solution using Terraform accelerated SnowFlake warehouse by 15%.</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-50 dark:bg-gray-800 p-3 rounded">
+                                    <h4 class="font-semibold text-accent mb-2">Project 4: Kubernetes-Native Data Management Core Banking Migration (Prabhu Bank & Century Bank)</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                                        <li>Engineered data pipeline ingesting over 2 TB of transaction data monthly into an S3-based Delta Lake.</li>
+                                        <li>Established a Lakehouse Analytics Platform on Databricks, to identify fraudulent patterns 90% faster.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Skills Section -->
                 <div id="resume-skills" class="resume-section hidden">
                     <h2 class="text-2xl font-bold text-gray-900 dark:text-dark-heading mb-4">TECHNICAL SKILLS</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="space-y-4">
                             <div>
-                                <h3 class="font-semibold text-accent mb-2">Programming Languages</h3>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">Python, JavaScript, Shell Script, PowerShell, HTML, CSS</p>
+                                <h3 class="font-semibold text-accent mb-2">Code</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">Python, Java, SQL, Snowflake, Amazon Redshift, Google BigQuery, Git, ETL / ELT, Databricks, AI</p>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-accent mb-2">Web Application Development</h3>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">React, Node.js, REST APIs, HTML/CSS</p>
+                                <h3 class="font-semibold text-accent mb-2">Cloud</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">AWS (S3, EC2, Glue, Lambda, SageMaker), Azure (Synapse, Data Factory)</p>
                             </div>
-                            <div>
-                                <h3 class="font-semibold text-accent mb-2">Cloud Platforms & Services</h3>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">AWS (Lambda, EC2, S3, ECS, RDS, Aurora, IoT Core, VPC, WAF, Route 53, SSM, CodeCommit, CodeBuild, CodePipeline, API Gateway, KMS, Secret Manager, Trusted Advisor, Cost Explorer, SQS, SNS), Serverless, Microservices, IaaS, PaaS, Cloud Architecture</p>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-accent mb-2">DevOps & CI/CD</h3>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">Git, GitHub, Jenkins, Docker, Infrastructure as Code (IAC), CloudFormation</p>
+                             <div>
+                                <h3 class="font-semibold text-accent mb-2">BI Tools</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">Tableau, Power BI</p>
                             </div>
                         </div>
                         <div class="space-y-4">
                             <div>
-                                <h3 class="font-semibold text-accent mb-2">Databases</h3>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">MySQL, PostgreSQL, DynamoDB, AWS RDS, Aurora</p>
+                                <h3 class="font-semibold text-accent mb-2">Math</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">Statistics, Numerical Methods, Linear Algebra, Time Series Analysis, Calculus, A/B Testing</p>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-accent mb-2">Security</h3>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">IAM, OAuth, SAML, SSO, Cloud Security</p>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-accent mb-2">Testing & Automation</h3>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">Automated Testing, Behavior Driven Development (BDD), Debugging</p>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-accent mb-2">Architecture & Design</h3>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">Software Architecture, Containers, Disaster Recovery</p>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-accent mb-2">Collaboration & Methodologies</h3>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">Agile, Scrum, Requirements Gathering, Process Automation, Communication, Technical Leadership</p>
+                                <h3 class="font-semibold text-accent mb-2">Other</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">Linux and Shell Scripting, Jira, Confluence, GitHub Actions, Jenkins, Documentation - Notion</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Projects Section -->
                 <div id="resume-projects" class="resume-section hidden">
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-dark-heading mb-4">PRODUCT DEVELOPMENT INITIATIVES</h2>
-                    <div class="border-l-4 border-accent pl-4">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-heading">Founder of BubbleBook.AI</h3>
-                            <div class="text-right">
-                                <p class="text-sm text-gray-600 dark:text-dark-text">March 2025 - present</p>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-dark-heading mb-4">PUBLICATIONS AND PROJECTS</h2>
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-accent pl-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-heading">Plant Disease Identification – Convolutional Neural Network Algorithm</h3>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-600 dark:text-dark-text">Aug 2019</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 dark:text-gray-300 mb-2">Image processing has been employed to detect plant diseases by analyzing the leaves' color.</p>
+                            <div class="flex space-x-4 text-sm">
+                                <a href="#" class="text-accent hover:underline">Report</a>
+                                <a href="#" class="text-accent hover:underline">GitHub</a>
                             </div>
                         </div>
-                        <p class="text-sm text-gray-600 dark:text-dark-text mb-3">Bubble Book (AI-Powered Networking Platform) Demo</p>
-                        <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-300">
-                            <li>Currently building a real-time SaaS product for professional and social matching, featuring a Flutter-based mobile frontend, a Next.js-based web frontend, and a scalable Python microservices backend.</li>
-                            <li>Developing a scalable backend architecture using microservices, integrating AI-powered matching algorithms (collaborative filtering and NLP-based profile analysis), and leveraging AWS SNS for robust push notifications.</li>
-                            <li>Designing and deploying core infrastructure on AWS (EC2, RDS for PostgreSQL, S3) using Terraform for Infrastructure as Code (IaC), enabling environment consistency and rapid scalability.</li>
-                            <li>Implementing robust CI/CD pipelines using GitHub Actions for automated testing and deployment, ensuring high availability, data security, and seamless feature delivery.</li>
-                        </ul>
+                        <div class="border-l-4 border-accent pl-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-heading">Retrieving Failed Bank List – Data Analysis Project</h3>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-600 dark:text-dark-text">Aug 2018</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 dark:text-gray-300 mb-2">Data analysis Project of FDIC's Failed Bank List, identifying trends, and predicting future bank failure.</p>
+                            <div class="flex space-x-4 text-sm">
+                                <a href="#" class="text-accent hover:underline">Report</a>
+                                <a href="#" class="text-accent hover:underline">GitHub</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -351,7 +348,6 @@
     </div>
 
     <div id="main-content" class="hidden">
-        <!-- Header -->
         <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-dark-bg/80 backdrop-blur-sm shadow-md">
             <div class="container mx-auto px-6 py-4 flex justify-between items-center">
                 <a href="#" class="text-xl font-bold text-gray-900 dark:text-dark-heading">Shashangka Upadhyaya</a>
@@ -372,7 +368,6 @@
                     </button>
                 </div>
             </div>
-            <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden">
                 <a href="#about" class="block py-2 px-6 text-sm hover:bg-gray-200 dark:hover:bg-dark-card">About</a>
                 <a href="#projects" class="block py-2 px-6 text-sm hover:bg-gray-200 dark:hover:bg-dark-card">Projects</a>
@@ -383,24 +378,20 @@
         </header>
 
         <main class="pt-24">
-            <!-- Hero Section -->
             <section id="home" class="container mx-auto px-6 py-20 md:py-32 text-center">
                 <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-dark-heading mb-4">
-                    Cloud & Backend Engineer | <span id="typed-headline"></span>
+                    Data Engineer | <span id="typed-headline"></span>
                 </h1>
                 <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-gray-600 dark:text-dark-text">
-                    Building scalable, AI-powered software to transform how people connect.
+                    Architecting robust data pipelines and deploying scalable MLOps frameworks to unlock data-driven insights.
                 </p>
                 <div class="flex justify-center items-center space-x-4">
                     <a href="#projects" class="bg-accent hover:bg-accent-hover text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">See Projects</a>
-                    <!-- Update both résumé buttons to type="button" and add IDs -->
-                    <!-- Hero Section Button -->
                     <a id="view-resume-btn" href="#" type="button" class="bg-gray-200 dark:bg-dark-card hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">View Résumé</a>
                     <a href="#contact" class="bg-gray-200 dark:bg-dark-card hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">Connect with Me</a>
                 </div>
             </section>
 
-            <!-- About Me Section -->
             <section id="about" class="py-20 bg-gray-50 dark:bg-dark-card section-fade-in">
                 <div class="container mx-auto px-6">
                     <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-dark-heading">About Me</h2>
@@ -417,67 +408,64 @@
                         </div>
                         <div class="md:w-2/3">
                             <p class="text-lg mb-6 leading-relaxed">
-                                Based in the Bay Area, I am a new Grad  Master's student in Computer Science at the University of Central Missouri  with a deep passion for building scalable, AI-powered software. As the founder of BubbleBook.AI, an innovative real-time networking platform, I have hands-on experience in the entire product lifecycle, from conception to deployment. My expertise is backed by industry-recognized certifications from AWS, Azure, and Google's Generative AI program.
+                                As a Data Engineer based in the Bay Area and a recent Master's graduate in Computer Science, I am passionate about architecting scalable data ecosystems. At BubbleBook.ai, I'm leading the development of data-intensive features, from designing ETL/ELT pipelines with Spark and Airflow to deploying production-grade MLOps frameworks. My goal is to build solutions that transform raw data into actionable intelligence, backed by certifications from AWS and Azure.
                             </p>
-                            <!-- Update both résumé buttons to type="button" and add IDs -->
-                            <!-- About Me Section Button -->
                             <a id="download-resume-btn" href="#" type="button" class="inline-block bg-accent hover:bg-accent-hover text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">Download Résumé</a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Skills & Certifications Section -->
             <section id="skills" class="py-20 section-fade-in">
                 <div class="container mx-auto px-6">
                     <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-dark-heading">Skills & Certifications</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                        <!-- Skills -->
                         <div>
                             <h3 class="text-2xl font-semibold mb-6 text-center md:text-left text-gray-800 dark:text-gray-100">Technical Skills</h3>
                             <div class="space-y-6">
+                                <div>
+                                    <h4 class="font-semibold mb-2 text-accent">Languages & Databases</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Java</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">SQL</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Snowflake</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Redshift</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">BigQuery</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2 text-accent">Data Processing & ETL</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Spark</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Airflow</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Kafka</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Databricks</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">AWS Glue</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2 text-accent">MLOps & DevOps</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Docker</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Kubernetes</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">GitHub Actions</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Terraform</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Jenkins</span>
+                                    </div>
+                                </div>
                                 <div>
                                     <h4 class="font-semibold mb-2 text-accent">Cloud</h4>
                                     <div class="flex flex-wrap gap-2">
                                         <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">AWS</span>
                                         <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Azure</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Terraform</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Lambda</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">EC2</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">RDS</span>
                                         <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">S3</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold mb-2 text-accent">Languages</h4>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Python</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">JavaScript</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Bash</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">SQL</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold mb-2 text-accent">DevOps</h4>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Docker</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">GitHub Actions</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Jenkins</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Helm</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold mb-2 text-accent">Tools</h4>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Grafana</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Prometheus</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">ELK Stack</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">SonarQube</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">SageMaker</span>
+                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Lambda</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Certifications -->
                         <div>
                             <h3 class="text-2xl font-semibold mb-6 text-center md:text-left text-gray-800 dark:text-gray-100">Certifications</h3>
                             <div class="space-y-4">
@@ -517,38 +505,49 @@
                 </div>
             </section>
 
-            <!-- Experience Section -->
             <section id="experience" class="py-20 bg-gray-50 dark:bg-dark-card section-fade-in">
                 <div class="container mx-auto px-6">
                     <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-dark-heading">Experience</h2>
                     <div class="relative max-w-2xl mx-auto">
                         <div class="absolute left-1/2 w-0.5 h-full bg-gray-300 dark:bg-gray-600 transform -translate-x-1/2"></div>
-                        <!-- Experience Item 1 -->
-                        <div class="relative mb-8">
-                            <div class="absolute w-4 h-4 bg-accent rounded-full left-1/2 top-1.5 -translate-x-1/2 border-4 border-white dark:border-dark-card"></div>
-                            <div class="ml-auto md:ml-0 md:w-5/12 md:pl-8 md:text-right">
-                                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-                                    <h3 class="text-xl font-bold text-gray-900 dark:text-dark-heading">Cloud Solutions Engineer</h3>
-                                    <p class="text-sm text-gray-600 dark:text-dark-text mb-2">Infosys Partner | 2022 - 2023</p>
-                                    <ul class="list-disc list-inside text-left text-sm space-y-1">
-                                        <li>Led Finacle deployments on Kubernetes.</li>
-                                        <li>Managed CI/CD with Azure DevOps & Terraform.</li>
-                                        <li>Set up monitoring with Prometheus & Grafana.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Experience Item 2 -->
                         <div class="relative mb-8">
                             <div class="absolute w-4 h-4 bg-accent rounded-full left-1/2 top-1.5 -translate-x-1/2 border-4 border-white dark:border-dark-card"></div>
                             <div class="md:w-5/12 md:mr-auto md:pr-8">
                                  <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-                                    <h3 class="text-xl font-bold text-gray-900 dark:text-dark-heading"> Software Automation Engineer</h3>
-                                    <p class="text-sm text-gray-600 dark:text-dark-text mb-2">IMARK Digital | 2020 - 2022</p>
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-dark-heading">Data Engineer</h3>
+                                    <p class="text-sm text-gray-600 dark:text-dark-text mb-2">Bubblebook.ai | 2025 - Present</p>
                                     <ul class="list-disc list-inside text-sm space-y-1">
-                                        <li>Managed enterprise network infrastructure.</li>
-                                        <li>Oversaw cybersecurity operations.</li>
-                                        <li>Handled performance tuning & incident response.</li>
+                                        <li>Architected ETL/ELT pipelines with Spark & Airflow.</li>
+                                        <li>Optimized RAG with Pinecone vector DB.</li>
+                                        <li>Deployed MLOps framework on Kubernetes.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative mb-8">
+                            <div class="absolute w-4 h-4 bg-accent rounded-full left-1/2 top-1.5 -translate-x-1/2 border-4 border-white dark:border-dark-card"></div>
+                            <div class="ml-auto md:ml-0 md:w-5/12 md:pl-8 md:text-right">
+                                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-dark-heading">Data Engineer</h3>
+                                    <p class="text-sm text-gray-600 dark:text-dark-text mb-2">Infosys Partner | 2022 - 2023</p>
+                                    <ul class="list-disc list-inside text-left text-sm space-y-1">
+                                        <li>Built AWS data platform for 15M+ daily transactions.</li>
+                                        <li>Orchestrated SageMaker ML pipelines.</li>
+                                        <li>Operationalized a real-time fraud detection model.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative mb-8">
+                            <div class="absolute w-4 h-4 bg-accent rounded-full left-1/2 top-1.5 -translate-x-1/2 border-4 border-white dark:border-dark-card"></div>
+                            <div class="md:w-5/12 md:mr-auto md:pr-8">
+                                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-dark-heading">Cloud Data Engineer</h3>
+                                    <p class="text-sm text-gray-600 dark:text-dark-text mb-2">IMARK Solution | 2020 - 2022</p>
+                                    <ul class="list-disc list-inside text-sm space-y-1">
+                                        <li>Engineered S3 Data Lake to Snowflake warehouse.</li>
+                                        <li>Built Delta Lake pipeline on Databricks.</li>
+                                        <li>Automated cloud infra with Terraform.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -557,29 +556,26 @@
                 </div>
             </section>
 
-            <!-- Projects Section -->
             <section id="projects" class="py-20 section-fade-in">
                 <div class="container mx-auto px-6">
                     <h2 class="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-dark-heading">Projects</h2>
                     <div class="flex justify-center space-x-2 mb-12">
                         <button class="project-filter-btn active" data-filter="all">All</button>
-                        <button class="project-filter-btn" data-filter="AI">AI</button>
-                        <button class="project-filter-btn" data-filter="Cloud">Cloud</button>
-                        <button class="project-filter-btn" data-filter="DevOps">DevOps</button>
-                        <button class="project-filter-btn" data-filter="SaaS">SaaS</button>
+                        <button class="project-filter-btn" data-filter="DataPipeline">Data Pipeline</button>
+                        <button class="project-filter-btn" data-filter="MLOps">MLOps</button>
+                        <button class="project-filter-btn" data-filter="DataScience">Data Science</button>
                     </div>
                     <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!-- Project 1 -->
-                        <div class="project-card bg-white dark:bg-dark-card rounded-lg shadow-lg overflow-hidden" data-category="AI SaaS Cloud">
-                            <img src="https://placehold.co/600x400/1f2937/ffffff?text=BubbleBook.AI" alt="BubbleBook.AI" class="w-full h-48 object-cover">
+                        <div class="project-card bg-white dark:bg-dark-card rounded-lg shadow-lg overflow-hidden" data-category="DataPipeline MLOps">
+                            <img src="https://placehold.co/600x400/1f2937/ffffff?text=BubbleBook.AI" alt="BubbleBook.AI Data Platform" class="w-full h-48 object-cover">
                             <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-dark-heading">BubbleBook.AI</h3>
-                                <p class="text-sm mb-4">An AI-powered real-time networking platform to connect individuals based on shared interests and professional goals.</p>
+                                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-dark-heading">BubbleBook.AI Data Platform</h3>
+                                <p class="text-sm mb-4">Architected the data infrastructure, featuring ETL pipelines with Spark & Airflow and a Kubernetes-based MLOps framework.</p>
                                 <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Flutter</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Next.js</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Python</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">AWS</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Spark</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Airflow</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Kubernetes</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Pinecone</span>
                                 </div>
                                 <div class="flex space-x-4">
                                     <a href="#" class="text-gray-500 hover:text-accent"><i data-lucide="github"></i></a>
@@ -587,47 +583,40 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Project 2 -->
-                        <div class="project-card bg-white dark:bg-dark-card rounded-lg shadow-lg overflow-hidden" data-category="Cloud DevOps">
-                            <img src="https://placehold.co/600x400/1f2937/ffffff?text=Finacle+Migration" alt="Finacle Core Banking Migrations" class="w-full h-48 object-cover">
+                        <div class="project-card bg-white dark:bg-dark-card rounded-lg shadow-lg overflow-hidden" data-category="DataScience">
+                            <img src="https://placehold.co/600x400/1f2937/ffffff?text=Plant+Disease+ID" alt="Plant Disease Identification" class="w-full h-48 object-cover">
                             <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-dark-heading">Finacle Core Banking Migrations</h3>
-                                <p class="text-sm mb-4">Migrated and deployed the Finacle core banking application on Kubernetes clusters, ensuring high availability and scale.</p>
+                                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-dark-heading">Plant Disease Identification</h3>
+                                <p class="text-sm mb-4">Developed a Convolutional Neural Network (CNN) to detect plant diseases from leaf images through color analysis.</p>
                                 <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Kubernetes</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Azure</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">GraphQL</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Terraform</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Python</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">CNN</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Image Processing</span>
                                 </div>
                                  <div class="flex space-x-4">
                                     <a href="#" class="text-gray-500 hover:text-accent"><i data-lucide="github"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <!-- Project 3 -->
-                        <div class="project-card bg-white dark:bg-dark-card rounded-lg shadow-lg overflow-hidden" data-category="Web Development SaaS">
-                            <img src="assets/images/bay.png" alt="Realtor Website" class="w-full h-48 object-cover">
+                        <div class="project-card bg-white dark:bg-dark-card rounded-lg shadow-lg overflow-hidden" data-category="DataScience">
+                            <img src="https://placehold.co/600x400/1f2937/ffffff?text=Bank+Failure+Analysis" alt="Failed Bank List Analysis" class="w-full h-48 object-cover">
                             <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-dark-heading">Realtor Website for Client in California</h3>
-                                <p class="text-sm mb-4">A professional realtor website created for Mitra Dev Bhattarai, a top Bay Area realtor. Features modern design, property listings, and client management tools.</p>
+                                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-dark-heading">Failed Bank List Analysis</h3>
+                                <p class="text-sm mb-4">Analyzed the FDIC's Failed Bank List to identify historical trends and build a predictive model for future bank failures.</p>
                                 <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">JavaScript</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">PHP</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">HTML5</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Node.js</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Python</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Data Analysis</span>
+                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">SQL</span>
                                 </div>
                                 <div class="flex space-x-4">
-                                    <a href="https://github.com/shashangka-upadhyaya/Realtor-website" target="_blank" class="text-gray-500 hover:text-accent"><i data-lucide="github"></i></a>
-                                    <a href="https://shashangka-upadhyaya.github.io/Realtor-website/index.html" target="_blank" class="text-gray-500 hover:text-accent"><i data-lucide="external-link"></i></a>
+                                    <a href="#" class="text-gray-500 hover:text-accent"><i data-lucide="github"></i></a>
                                 </div>
                             </div>
                         </div>
-                         <!-- Add more projects as needed -->
                     </div>
                 </div>
             </section>
 
-            <!-- Contact Section -->
             <section id="contact" class="py-20 bg-gray-50 dark:bg-dark-card section-fade-in">
                 <div class="container mx-auto px-6 text-center">
                     <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-dark-heading">Get In Touch</h2>
@@ -646,10 +635,9 @@
             </section>
         </main>
 
-        <!-- Footer -->
         <footer class="bg-gray-100 dark:bg-gray-900 py-8">
             <div class="container mx-auto px-6 text-center text-gray-600 dark:text-dark-text">
-                <p>Bay Area, CA | <a href="mailto:shashangka.upa@gmail.com" class="hover:text-accent">shashangka.upa@gmail.com</a> | <a href="http://www.shashangkaupadhyaya.com" class="hover:text-accent">www.shashangkaupadhyaya.com</a></p>
+                <p>Bay Area, CA | <a href="mailto:shashangka.upa@gmail.com" class="hover:text-accent">shashangka.upa@gmail.com</a> | <a href="http://shashupadhyaya.com" class="hover:text-accent">shashupadhyaya.com</a></p>
                 <p class="mt-2 text-sm">&copy; 2025 Shashangka Upadhyaya. All Rights Reserved.</p>
             </div>
         </footer>
@@ -681,7 +669,7 @@
 
             // Typed.js Animation
             var typed = new Typed('#typed-headline', {
-                strings: ['DevOps', 'Product Builder', 'AI Enthusiast'],
+                strings: ['Data Pipelines', 'MLOps', 'AI Solutions'],
                 typeSpeed: 50,
                 backSpeed: 30,
                 loop: true,
