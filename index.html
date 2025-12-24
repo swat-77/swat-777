@@ -1,712 +1,227 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shashangka Upadhyaya - Senior Cloud/DevOps Engineer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shashangka Upadhyaya | Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            accent: '#38bdf8',
+            'accent-hover': '#0ea5e9',
+            'dark-bg': '#111827',
+            'dark-card': '#1f2937'
+          }
         }
-        .typed-cursor {
-            color: #38bdf8; /* Light blue color for cursor */
-        }
-        .section-fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .section-fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        /* Splash Screen Styles */
-        #splash-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #111827;
-            z-index: 100;
-            display: flex;
-            flex-direction: column; /* Arrange items vertically */
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.75s ease-out;
-        }
-        #splash-image {
-            width: 200px; /* Adjust size as needed */
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #38bdf8;
-        }
-        #splash-text {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #f9fafb;
-            margin-top: 2rem;
-            text-align: center;
-            animation: fadeInText 2s ease-in-out;
-        }
-        @keyframes fadeInText {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .hidden {
-            display: none;
-        }
-        .resume-nav-btn {
-            transition: all 0.3s ease;
-        }
-        .resume-nav-btn:hover {
-            color: var(--tw-bg-accent, #38bdf8);
-        }
-        .resume-nav-btn.active {
-            color: var(--tw-bg-accent, #38bdf8);
-        }
-        /* Ensure projects section is properly visible */
-        #projects {
-            scroll-margin-top: 100px;
-        }
-        /* Ensure all sections have proper scroll margin */
-        section[id] {
-            scroll-margin-top: 100px;
-        }
-        /* Force smooth scrolling */
-        html {
-            scroll-behavior: smooth !important;
-        }
-    </style>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        'dark-bg': '#111827',
-                        'dark-card': '#1f2937',
-                        'dark-text': '#d1d5db',
-                        'dark-heading': '#f9fafb',
-                        'accent': '#38bdf8',
-                        'accent-hover': '#0ea5e9',
-                    }
-                }
-            }
-        }
-    </script>
-    <noscript>
-        <style>
-            #splash-screen { display: none !important; }
-            #main-content { display: block !important; }
-        </style>
-    </noscript>
-    <style>
-        @keyframes splash-fadeout {
-            to { opacity: 0; pointer-events: none; display: none; }
-        }
-        .splash-fadeout {
-            animation: splash-fadeout 0.75s ease-out 3s forwards;
-        }
-      #resume-modal input,
-      #resume-modal textarea {
-        background-color: #fff !important;
-        color: #222 !important;
       }
-      #resume-modal input::placeholder,
-      #resume-modal textarea::placeholder {
-        color: #888 !important;
-        opacity: 1;
-      }
-    </style>
-    <script>
-        // Add a CSS fallback in case JS fails
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('splash-screen').classList.add('splash-fadeout');
-        });
-    </script>
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+    .typed-cursor { color: #38bdf8; }
+    .section-fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+    .section-fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
-<body class="bg-white dark:bg-dark-bg text-gray-700 dark:text-dark-text transition-colors duration-300">
 
-    <div id="splash-screen">
-        <img id="splash-image" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Man coding on a computer GIF">
-        <h1 id="splash-text">Welcome to Shash World!</h1>
+<body class="bg-white dark:bg-dark-bg text-gray-700 dark:text-gray-300">
+
+<!-- SPLASH SCREEN -->
+<div id="splash-screen" class="fixed inset-0 z-50 flex flex-col justify-center items-center bg-dark-bg">
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif"
+       class="w-40 h-40 rounded-full border-4 border-accent">
+  <h1 class="text-3xl font-bold text-white mt-6">Welcome to Shash World</h1>
+</div>
+
+<div id="main-content" class="hidden">
+
+<!-- HEADER -->
+<header class="fixed top-0 w-full z-40 bg-white/80 dark:bg-dark-bg/80 backdrop-blur shadow">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <span class="text-xl font-bold text-gray-900 dark:text-white">
+      Shashangka Upadhyaya
+    </span>
+
+    <nav class="hidden md:flex gap-6">
+      <a href="#about" class="hover:text-accent">About</a>
+      <a href="#projects" class="hover:text-accent">Projects</a>
+      <a href="#skills" class="hover:text-accent">Skills</a>
+      <a href="#contact" class="hover:text-accent">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="pt-24">
+
+<!-- HERO -->
+<section class="text-center py-24 container mx-auto px-6">
+  <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+    <span id="typed-headline"></span>
+  </h1>
+
+  <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">
+    Building scalable full-stack applications and modern web platforms.
+  </p>
+
+  <div class="flex justify-center gap-4">
+    <a href="#projects"
+       class="bg-accent text-white px-6 py-3 rounded-lg font-bold hover:bg-accent-hover">
+      View Projects
+    </a>
+    <a href="#contact"
+       class="bg-gray-200 dark:bg-dark-card px-6 py-3 rounded-lg font-bold">
+      Contact
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 bg-gray-50 dark:bg-dark-card section-fade-in">
+  <div class="container mx-auto px-6 max-w-4xl text-center">
+    <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
+      About Me
+    </h2>
+
+    <p class="text-lg mb-6 leading-relaxed">
+      Full Stack Java Developer from San Francisco, California.
+    </p>
+
+    <p class="text-lg leading-relaxed">
+      Currently building my own product,
+      <a href="https://bubblebook.ai" target="_blank"
+         class="text-accent font-semibold hover:underline">
+        BubbleBook.ai
+      </a>,
+      an AI-powered social dating platform.
+    </p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-20 section-fade-in">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+      Skills
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+      <div>
+        <h3 class="font-semibold text-accent mb-2">Backend</h3>
+        <p>Java, Spring Boot, REST APIs, Microservices, Hibernate, OAuth2/JWT</p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-accent mb-2">Frontend</h3>
+        <p>React, Angular, JavaScript, TypeScript, HTML, CSS, Tailwind</p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-accent mb-2">Cloud & DevOps</h3>
+        <p>AWS, Azure, Docker, Kubernetes, CI/CD</p>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div id="resume-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
-        <div class="bg-white dark:bg-dark-card rounded-lg shadow-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
-            <button id="close-resume-modal" class="absolute top-4 right-4 text-gray-400 hover:text-accent text-2xl z-10 bg-white dark:bg-dark-card rounded-full w-8 h-8 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">&times;</button>
-            
-            <div class="flex justify-center mb-6 border-b border-gray-200 dark:border-gray-700">
-                <button class="resume-nav-btn active px-4 py-2 text-sm font-medium border-b-2 border-accent" data-section="resume-overview">Overview</button>
-                <button class="resume-nav-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent" data-section="resume-skills">Skills</button>
-                <button class="resume-nav-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent" data-section="resume-education">Education</button>
-            </div>
+<!-- PROJECTS -->
+<section id="projects" class="py-20 bg-gray-50 dark:bg-dark-card section-fade-in">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+      Projects
+    </h2>
 
-            <div id="resume-content" class="space-y-6">
-                <div id="resume-overview" class="resume-section">
-                    <div class="text-center mb-6">
-                        <h1 class="text-3xl font-bold text-gray-900 dark:text-dark-heading mb-2">SHASHANGKA UPADHYAYA</h1>
-                        <p class="text-lg text-gray-600 dark:text-dark-text mb-2">Senior Cloud/DevOps Engineer</p>
-                        <p class="text-lg text-gray-600 dark:text-dark-text mb-4">San Francisco, CA | Authorized to work in USA | Willing to relocate</p>
-                        <div class="flex justify-center space-x-4 text-sm text-gray-600 dark:text-dark-text">
-                            <span>shashangka.upa@gmail.com</span>
-                            <span>•</span>
-                            <a href="http://shashupadhyaya.com" target="_blank" class="hover:text-accent">Portfolio</a>
-                            <span>•</span>
-                            <a href="https://linkedin.com/in/shashup/" target="_blank" class="hover:text-accent">LinkedIn</a>
-                            <span>•</span>
-                            <a href="https://github.com/shashangka-upadhyaya" target="_blank" class="hover:text-accent">GitHub</a>
-                        </div>
-                    </div>
-                </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+        <h3 class="font-bold text-xl mb-2">Enterprise Platform</h3>
+        <p class="text-sm">
+          Built scalable backend services and secure APIs using Java and Spring Boot.
+        </p>
+      </div>
 
-                <div id="resume-education" class="resume-section hidden">
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-dark-heading mb-4">EDUCATION</h2>
-                    <div class="space-y-4">
-                        <div class="border-l-4 border-accent pl-4">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-heading">University of Central Missouri</h3>
-                                    <p class="text-gray-600 dark:text-dark-text">Master in Computer Science</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="text-sm text-gray-600 dark:text-dark-text">Missouri, USA</p>
-                                    <p class="text-sm text-gray-600 dark:text-dark-text">Expected May 2025</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="border-l-4 border-accent pl-4">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-heading">Tribhuvan University</h3>
-                                    <p class="text-gray-600 dark:text-dark-text">B.S. in Computer Science</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="text-sm text-gray-600 dark:text-dark-text">Kathmandu, Nepal</p>
-                                    <p class="text-sm text-gray-600 dark:text-dark-text">Dec 2019</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+        <h3 class="font-bold text-xl mb-2">Analytics Dashboard</h3>
+        <p class="text-sm">
+          Developed full-stack dashboards with modern frontend frameworks.
+        </p>
+      </div>
 
-                <div id="resume-skills" class="resume-section hidden">
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-dark-heading mb-4">TECHNICAL SKILLS</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-4">
-                            <div>
-                                <h3 class="font-semibold text-accent mb-2">Cloud Platforms</h3>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">AWS (EC2, S3, RDS, EKS, Lambda, CloudFormation), Azure (VMs, AKS, DevOps, Key Vault), GCP (GKE, Cloud Storage)</p>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-accent mb-2">Containerization & Orchestration</h3>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">Docker, Kubernetes (EKS, GKE, AKS), Helm</p>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-accent mb-2">CI/CD & Automation</h3>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">Jenkins, GitHub Actions, GitLab CI/CD, Azure DevOps, Argo CD</p>
-                            </div>
-                        </div>
-                        <div class="space-y-4">
-                            <div>
-                                <h3 class="font-semibold text-accent mb-2">Config Management & IaC</h3>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">Ansible, Chef, Puppet, Terraform, CloudFormation</p>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-accent mb-2">Scripting & Programming</h3>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">Python, Bash/Shell, Go, Linux</p>
-                            </div>
-                             <div>
-                                <h3 class="font-semibold text-accent mb-2">Monitoring & Logging</h3>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">Prometheus, Datadog, Grafana, CloudWatch, ELK/EKF Stack</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+        <h3 class="font-bold text-xl mb-2">BubbleBook.ai</h3>
+        <p class="text-sm">
+          AI-powered social dating platform built and maintained independently.
+        </p>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div id="main-content" class="hidden">
-        <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-dark-bg/80 backdrop-blur-sm shadow-md">
-            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="#" class="text-xl font-bold text-gray-900 dark:text-dark-heading">Shashangka Upadhyaya</a>
-                <nav class="hidden md:flex items-center space-x-6">
-                    <a href="#about" class="hover:text-accent dark:hover:text-accent">About</a>
-                    <a href="#projects" class="hover:text-accent dark:hover:text-accent">Projects</a>
-                    <a href="#skills" class="hover:text-accent dark:hover:text-accent">Skills</a>
-                    <a href="#contact" class="hover:text-accent dark:hover:text-accent">Contact</a>
-                </nav>
-                <div class="flex items-center">
-                    <button id="theme-toggle" class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-card">
-                        <i data-lucide="sun" class="block dark:hidden"></i>
-                        <i data-lucide="moon" class="hidden dark:block"></i>
-                    </button>
-                    <button id="mobile-menu-button" class="md:hidden ml-4 p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-card">
-                        <i data-lucide="menu"></i>
-                    </button>
-                </div>
-            </div>
-            <div id="mobile-menu" class="hidden md:hidden">
-                <a href="#about" class="block py-2 px-6 text-sm hover:bg-gray-200 dark:hover:bg-dark-card">About</a>
-                <a href="#projects" class="block py-2 px-6 text-sm hover:bg-gray-200 dark:hover:bg-dark-card">Projects</a>
-                <a href="#skills" class="block py-2 px-6 text-sm hover:bg-gray-200 dark:hover:bg-dark-card">Skills</a>
-                <a href="#contact" class="block py-2 px-6 text-sm hover:bg-gray-200 dark:hover:bg-dark-card">Contact</a>
-            </div>
-        </header>
+<!-- CONTACT -->
+<section id="contact" class="py-20 section-fade-in text-center">
+  <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+    Get In Touch
+  </h2>
 
-        <main class="pt-24">
-            <section id="home" class="container mx-auto px-6 py-20 md:py-32 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-dark-heading mb-4">
-                    Senior Cloud/DevOps Engineer | <span id="typed-headline"></span>
-                </h1>
-                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-gray-600 dark:text-dark-text">
-                    Multi-cloud DevOps Engineer with more than half a decade of experience in modern practices including GitOps, MLOps, and Infrastructure as Code (IaC).
-                </p>
-                <div class="flex justify-center items-center space-x-4">
-                    <a href="#projects" class="bg-accent hover:bg-accent-hover text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">See Projects</a>
-                    <a id="view-resume-btn" href="#" type="button" class="bg-gray-200 dark:bg-dark-card hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">View Résumé</a>
-                    <a href="#contact" class="bg-gray-200 dark:bg-dark-card hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">Connect with Me</a>
-                </div>
-            </section>
+  <a href="mailto:shashangka.upa@gmail.com"
+     class="inline-block bg-accent text-white px-8 py-4 rounded-lg font-bold hover:bg-accent-hover">
+    Say Hello
+  </a>
+</section>
 
-            <section id="about" class="py-20 bg-gray-50 dark:bg-dark-card section-fade-in">
-                <div class="container mx-auto px-6">
-                    <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-dark-heading">About Me</h2>
-                    <div class="flex flex-col md:flex-row items-center gap-12">
-                        <div class="md:w-1/3 text-center">
-                            <img src="assets/images/ram.jpg" alt="Shashangka Upadhyaya" class="mx-auto mb-6 border-4 border-accent bg-white p-2 max-w-xs w-full" style="background-color:#fff; padding:0.5rem;">
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-dark-heading">Shashangka Upadhyaya</h3>
-                            <p class="text-gray-600 dark:text-dark-text">Bay Area, CA</p>
-                            <div class="flex justify-center space-x-4 mt-4">
-                                <a href="https://www.linkedin.com/in/shashup/" target="_blank" class="text-gray-500 hover:text-accent"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
-                                <a href="https://github.com/shashangka-upadhyaya" target="_blank" class="text-gray-500 hover:text-accent"><i data-lucide="github" class="w-6 h-6"></i></a>
-                                <a href="mailto:shashangka.upa@gmail.com" class="text-gray-500 hover:text-accent"><i data-lucide="mail" class="w-6 h-6"></i></a>
-                            </div>
-                        </div>
-                        <div class="md:w-2/3">
-                            <p class="text-lg mb-6 leading-relaxed">
-                                As a Senior Cloud/DevOps Engineer and a recent Master's graduate in Computer Science, I specialize in building and automating robust, scalable cloud infrastructure. At BubbleBook.ai, I'm spearheading the creation of a sophisticated SaaS platform, implementing CI/CD pipelines, and managing Kubernetes clusters. With extensive experience across AWS and Azure and a passion for automation with tools like Terraform and Ansible, my goal is to architect resilient systems that drive business value.
-                            </p>
-                            <a id="download-resume-btn" href="#" type="button" class="inline-block bg-accent hover:bg-accent-hover text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">Download Résumé</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+</main>
 
-            <section id="skills" class="py-20 section-fade-in">
-                <div class="container mx-auto px-6">
-                    <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-dark-heading">Skills & Certifications</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-6 text-center md:text-left text-gray-800 dark:text-gray-100">Technical Skills</h3>
-                            <div class="space-y-6">
-                                <div>
-                                    <h4 class="font-semibold mb-2 text-accent">Cloud & IaC</h4>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">AWS</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Azure</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">GCP</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Terraform</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">CloudFormation</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold mb-2 text-accent">Containerization</h4>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Docker</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Kubernetes</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">EKS</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">AKS</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Helm</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold mb-2 text-accent">CI/CD & Automation</h4>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Jenkins</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">GitHub Actions</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Azure DevOps</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Argo CD</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Ansible</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold mb-2 text-accent">Scripting & Languages</h4>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Python</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Bash/Shell</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">Go</span>
-                                        <span class="bg-gray-200 dark:bg-dark-card text-sm font-medium px-3 py-1 rounded-full">YAML</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-6 text-center md:text-left text-gray-800 dark:text-gray-100">Certifications</h3>
-                            <div class="space-y-4">
-                                <div class="flex items-center p-4 bg-gray-100 dark:bg-dark-card rounded-lg justify-between relative">
-                                    <div class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" class="w-16 h-16 mr-4"><rect width="64" height="64" fill="#FF9900" rx="8"/><text x="32" y="40" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">AWS</text></svg>
-                                        <div>
-                                            <h4 class="font-bold text-gray-900 dark:text-dark-heading">AWS Certified Solutions Architect</h4>
-                                            <p class="text-sm text-gray-600 dark:text-dark-text">Amazon Web Services</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center p-4 bg-gray-100 dark:bg-dark-card rounded-lg justify-between relative">
-                                    <div class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" class="w-16 h-16 mr-4"><rect width="64" height="64" fill="#0078D4" rx="8"/><text x="32" y="34" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Microsoft</text><text x="32" y="50" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">EXPERT</text></svg>
-                                        <div>
-                                            <h4 class="font-bold text-gray-900 dark:text-dark-heading">Microsoft DevOps Engineer Expert</h4>
-                                            <p class="text-sm text-gray-600 dark:text-dark-text">Microsoft</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center p-4 bg-gray-100 dark:bg-dark-card rounded-lg justify-between relative">
-                                    <div class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" class="w-16 h-16 mr-4"><rect width="64" height="64" fill="#326CE5" rx="8"/><text x="32" y="40" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">CKA</text></svg>
-                                        <div>
-                                            <h4 class="font-bold text-gray-900 dark:text-dark-heading">Certified Kubernetes Administrator</h4>
-                                            <p class="text-sm text-gray-600 dark:text-dark-text">The Linux Foundation</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+<footer class="py-8 bg-gray-100 dark:bg-gray-900 text-center text-sm">
+  <p>&copy; 2025 Shashangka Upadhyaya</p>
+</footer>
 
-            <section id="projects" class="py-20 section-fade-in bg-gray-50 dark:bg-dark-card">
-                <div class="container mx-auto px-6">
-                    <h2 class="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-dark-heading">Projects</h2>
-                     <div class="flex justify-center space-x-2 mb-12">
-                         <button class="project-filter-btn active" data-filter="all">All</button>
-                         <button class="project-filter-btn" data-filter="Cloud">Cloud & IaC</button>
-                         <button class="project-filter-btn" data-filter="DevOps">DevOps</button>
-                         <button class="project-filter-btn" data-filter="SaaS">SaaS</button>
-                     </div>
-                    <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden" data-category="SaaS DevOps">
-                            <img src="https://placehold.co/600x400/1f2937/ffffff?text=BubbleBook.AI" alt="BubbleBook.AI SaaS Platform" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-dark-heading">BubbleBook.AI SaaS Platform</h3>
-                                <p class="text-sm mb-4">Led the founding engineering effort to launch a SaaS AI platform, including backend development and cloud infrastructure on Azure.</p>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Python</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Azure DevOps</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Kubernetes</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">AI</span>
-                                </div>
-                                <div class="flex space-x-4">
-                                    <a href="#" class="text-gray-500 hover:text-accent"><i data-lucide="github"></i></a>
-                                    <a href="https://bubblebook.ai" target="_blank" class="text-gray-500 hover:text-accent"><i data-lucide="external-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden" data-category="Cloud DevOps">
-                            <img src="https://placehold.co/600x400/1f2937/ffffff?text=Cloud+Migration" alt="AWS Cloud Migration & Automation" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-dark-heading">AWS Cloud Migration & Automation</h3>
-                                <p class="text-sm mb-4">Migrated on-premise build and test environments to AWS, developing automated infrastructure provisioning using CloudFormation and Terraform.</p>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">AWS</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Terraform</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">CloudFormation</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Ansible</span>
-                                </div>
-                                 <div class="flex space-x-4">
-                                    <a href="#" class="text-gray-500 hover:text-accent"><i data-lucide="github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden" data-category="DevOps">
-                            <img src="https://placehold.co/600x400/1f2937/ffffff?text=CI/CD+Pipelines" alt="CI/CD Pipeline & Containerization" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-dark-heading">CI/CD Pipeline & Containerization</h3>
-                                <p class="text-sm mb-4">Implemented robust CI/CD pipelines using Jenkins for automated builds and deployments. Deployed applications in Docker containers managed by Kubernetes.</p>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Jenkins</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Docker</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">Kubernetes</span>
-                                    <span class="text-xs bg-accent/20 text-accent font-semibold px-2 py-1 rounded">ELK Stack</span>
-                                </div>
-                                <div class="flex space-x-4">
-                                    <a href="#" class="text-gray-500 hover:text-accent"><i data-lucide="github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+</div>
 
-            <section id="contact" class="py-20 section-fade-in">
-                <div class="container mx-auto px-6 text-center">
-                    <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-dark-heading">Get In Touch</h2>
-                    <p class="max-w-2xl mx-auto mb-8 text-lg">
-                        I'm always open to discussing new opportunities and collaborations. Feel free to reach out!
-                    </p>
-                    <a href="mailto:shashangka.upa@gmail.com" class="inline-block bg-accent hover:bg-accent-hover text-white font-bold py-4 px-8 rounded-lg text-lg transition-transform transform hover:scale-105">
-                        Say Hello
-                    </a>
-                    <div class="flex justify-center space-x-6 mt-12">
-                        <a href="https://github.com/shashangka-upadhyaya" target="_blank" class="text-gray-500 hover:text-accent"><i data-lucide="github" class="w-8 h-8"></i></a>
-                        <a href="https://www.linkedin.com/in/shashup/" target="_blank" class="text-gray-500 hover:text-accent"><i data-lucide="linkedin" class="w-8 h-8"></i></a>
-                        <a href="#home" class="text-gray-500 hover:text-accent"><i data-lucide="briefcase" class="w-8 h-8"></i></a>
-                    </div>
-                </div>
-            </section>
-        </main>
+<script>
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('splash-screen').style.display = 'none';
+    document.getElementById('main-content').classList.remove('hidden');
 
-        <footer class="bg-gray-100 dark:bg-gray-900 py-8">
-            <div class="container mx-auto px-6 text-center text-gray-600 dark:text-dark-text">
-                <p>Bay Area, CA | <a href="mailto:shashangka.upa@gmail.com" class="hover:text-accent">shashangka.upa@gmail.com</a> | <a href="http://shashupadhyaya.com" class="hover:text-accent">shashupadhyaya.com</a></p>
-                <p class="mt-2 text-sm">&copy; 2025 Shashangka Upadhyaya. All Rights Reserved.</p>
-            </div>
-        </footer>
-    </div>
+    lucide.createIcons();
 
-    <script>
-        window.addEventListener('load', () => {
-            const splash = document.getElementById('splash-screen');
-            const mainContent = document.getElementById('main-content');
+    new Typed('#typed-headline', {
+      strings: [
+        'Full Stack Java Developer',
+        'Building Modern Web Applications',
+        'Creating Scalable Systems'
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
 
-            // Set a timer for the splash screen
-            setTimeout(() => {
-                splash.style.opacity = '0';
-                
-                // After the fade out animation
-                setTimeout(() => {
-                    splash.classList.add('hidden');
-                    mainContent.classList.remove('hidden');
-                    
-                    // Initialize scripts that depend on the main content being visible
-                    initializeMainScripts();
-                }, 750); // This should match the transition duration in CSS
-            }, 1000); // Splash screen will be visible for 1 second
-        });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    });
 
-        function initializeMainScripts() {
-            // Lucide Icons
-            lucide.createIcons();
+    document.querySelectorAll('.section-fade-in').forEach(s => observer.observe(s));
+  }, 1000);
+});
+</script>
 
-            // Typed.js Animation
-            var typed = new Typed('#typed-headline', {
-                strings: ['Cloud Architecture', 'DevOps & GitOps', 'Infrastructure as Code'],
-                typeSpeed: 50,
-                backSpeed: 30,
-                loop: true,
-                smartBackspace: true,
-            });
-
-            // Theme Toggle
-            const themeToggle = document.getElementById('theme-toggle');
-            const htmlEl = document.documentElement;
-
-            themeToggle.addEventListener('click', () => {
-                htmlEl.classList.toggle('dark');
-                localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
-                lucide.createIcons(); // Re-create icons to reflect theme change
-            });
-
-            // On page load, set the theme.
-            // It defaults to dark mode unless the user has explicitly chosen and saved light mode.
-            if (localStorage.getItem('theme') === 'light') {
-                htmlEl.classList.remove('dark');
-            } else {
-                htmlEl.classList.add('dark');
-            }
-            
-            // Mobile Menu
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            
-            // Close mobile menu when a link is clicked
-            mobileMenu.addEventListener('click', (e) => {
-                if (e.target.tagName === 'A') {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-
-            // Project Filtering
-            const filterBtns = document.querySelectorAll('.project-filter-btn');
-            const projectGrid = document.getElementById('project-grid');
-            const projectCards = document.querySelectorAll('.project-card');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-
-                    const filter = btn.dataset.filter;
-                    
-                    projectCards.forEach(card => {
-                        if (filter === 'all' || card.dataset.category.includes(filter)) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-            
-            // Add active class styling
-            const style = document.createElement('style');
-            style.innerHTML = `
-                .project-filter-btn {
-                    padding: 0.5rem 1rem;
-                    border-radius: 9999px;
-                    font-weight: 500;
-                    transition: all 0.2s ease;
-                    border: 2px solid transparent;
-                }
-                .project-filter-btn.active {
-                    background-color: var(--tw-bg-accent, #38bdf8);
-                    color: white;
-                }
-                .project-filter-btn:not(.active) {
-                     background-color: #e5e7eb; /* bg-gray-200 */
-                }
-                .dark .project-filter-btn:not(.active) {
-                     background-color: #374151; /* dark:bg-gray-700 */
-                }
-                 .project-filter-btn:not(.active):hover {
-                     border-color: var(--tw-bg-accent, #38bdf8);
-                 }
-            `;
-            document.head.appendChild(style);
-
-
-            // Intersection Observer for fade-in animations
-            const sections = document.querySelectorAll('.section-fade-in');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-
-            // Resume Modal Logic
-            const resumeModal = document.getElementById('resume-modal');
-            const closeResumeModal = document.getElementById('close-resume-modal');
-            const viewResumeBtn = document.getElementById('view-resume-btn');
-            const downloadResumeBtn = document.getElementById('download-resume-btn');
-            const resumeNavBtns = document.querySelectorAll('.resume-nav-btn');
-            const resumeSections = document.querySelectorAll('.resume-section');
-
-            function openModal(e) {
-                e.preventDefault();
-                resumeModal.classList.remove('hidden');
-                // Show overview section by default
-                showResumeSection('resume-overview');
-            }
-            
-            function closeModal() {
-                resumeModal.classList.add('hidden');
-            }
-            
-            function showResumeSection(sectionName) {
-                // Hide all sections
-                resumeSections.forEach(section => {
-                    section.classList.add('hidden');
-                });
-                
-                // Show the selected section
-                const targetSection = document.getElementById(sectionName);
-                if (targetSection) {
-                    targetSection.classList.remove('hidden');
-                }
-                
-                // Update navigation buttons
-                resumeNavBtns.forEach(btn => {
-                    btn.classList.remove('active', 'border-accent');
-                    btn.classList.add('border-transparent');
-                });
-                
-                const activeBtn = document.querySelector(`[data-section="${sectionName}"]`);
-                if (activeBtn) {
-                    activeBtn.classList.add('active', 'border-accent');
-                    activeBtn.classList.remove('border-transparent');
-                }
-            }
-            
-            // Add navigation event listeners
-            resumeNavBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const sectionName = btn.dataset.section;
-                    showResumeSection(sectionName);
-                });
-            });
-            
-            if (viewResumeBtn) viewResumeBtn.addEventListener('click', openModal);
-            if (downloadResumeBtn) downloadResumeBtn.addEventListener('click', openModal);
-            if (closeResumeModal) closeResumeModal.addEventListener('click', closeModal);
-
-            // Reliable smooth scrolling with proper timing
-            function setupSmoothScrolling() {
-                document.querySelectorAll('header a[href^="#"], #main-content a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        const targetId = this.getAttribute('href');
-                        const targetElement = document.querySelector(targetId);
-                        
-                        if (targetElement) {
-                            console.log('Scrolling to:', targetId);
-                            
-                            // Close mobile menu if open
-                            const mobileMenu = document.getElementById('mobile-menu');
-                            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                                mobileMenu.classList.add('hidden');
-                            }
-                            
-                            // Get header height
-                            const headerHeight = document.querySelector('header').offsetHeight;
-                            
-                            // Calculate target position
-                            const targetPosition = targetElement.offsetTop - headerHeight - 30;
-                            
-                            // Smooth scroll to calculated position
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'smooth'
-                            });
-                        }
-                    });
-                });
-            }
-            
-            // Setup scrolling after a short delay to ensure DOM is ready
-            setTimeout(setupSmoothScrolling, 100);
-        }
-        
-    </script>
 </body>
 </html>
